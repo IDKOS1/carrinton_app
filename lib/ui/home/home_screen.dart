@@ -127,11 +127,18 @@ class _HomeScreenState extends State<HomeScreen> {
                     TimeSelector(title:'Pending', isSelected: false,),
                   ],
                 ),
+                SizedBox(height: 16,),
                 Expanded(
                   child: ListView.builder(
                     itemCount: 30,
                     itemBuilder: (context, index) {
-                      return StoreInformation();
+                      return StoreInformation(
+                        title: 'Hawker Stall Sri Hartamas',
+                        location: '22, Jalan Sri Hartamas 8, Taman SriHartamas',
+                        number: '+60358884030',
+                        operatingTime: 'Operating Time',
+                        distance: 0.3,
+                      );
                     },
                   ),
                 )
