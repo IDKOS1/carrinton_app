@@ -112,7 +112,20 @@ class TimeSelector extends StatelessWidget {
 }
 
 class StoreInformation extends StatelessWidget {
-  const StoreInformation({super.key});
+  final String title;
+  final String location;
+  final String number;
+  final String operatingTime;
+  final double distance;
+
+  const StoreInformation({
+    super.key,
+    required this.title,
+    required this.location,
+    required this.number,
+    required this.operatingTime,
+    required this.distance
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -121,21 +134,34 @@ class StoreInformation extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 10, vertical: 12),
         decoration: BoxDecoration(
-          color: Colors.blueAccent,
-          borderRadius: BorderRadius.circular(6)
-        ),
+            color: Colors.blueAccent, borderRadius: BorderRadius.circular(6)),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Image.asset('assets/images/sample_store_image.png',
-            width: 100,
-            height: 100,),
-            Column(
-              children: [
-
-              ],
+            Image.asset(
+              'assets/images/sample_store_image.png',
+              width: 100,
+              height: 100,
+            ),
+            SizedBox(width: 20,),
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(title),
+                  Text(location),
+                  Text(number),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(operatingTime),
+                      Text('$distance')
+                    ],
+                  )
+                ],
+              ),
             )
-
           ],
         ),
       ),
