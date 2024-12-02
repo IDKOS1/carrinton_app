@@ -1,4 +1,4 @@
-import 'package:carrinton_app/models/StoreInfo.dart';
+import 'package:carrinton_app/models/store_info_model.dart';
 
 class MockStoreInfo {
   static final List<StoreInfo> storeList = [
