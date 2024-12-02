@@ -1,9 +1,14 @@
+import 'package:carrinton_app/models/nav_enum_model.dart';
 import 'package:carrinton_app/theme/colors.dart';
+import 'package:carrinton_app/ui/base/base_screen.dart';
+import 'package:carrinton_app/ui/collected/collected_screen.dart';
 import 'package:carrinton_app/ui/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class BottomNavBar extends StatefulWidget {
+  const BottomNavBar({super.key});
+
   @override
   _BottomNavBarState createState() => _BottomNavBarState();
 }
@@ -11,11 +16,18 @@ class BottomNavBar extends StatefulWidget {
 class _BottomNavBarState extends State<BottomNavBar> {
   int _selectedIndex = 0;
 
-  final List<String> _icons = [
-    'assets/icons/icon_home.svg',
-    'assets/icons/icon_collected.svg',
-    'assets/icons/icon_warehouse.svg',
-    'assets/icons/icon_setting.svg',
+  final List<Nav> pages = [
+    Nav.home,
+    Nav.collected,
+    Nav.wareHouse,
+    Nav.settings,
+  ];
+
+  final List<Widget> bodies = [
+    const HomeScreen(),
+    const CollectedScreen(),
+    const Center(child: Text('Warehouse', style: TextStyle(fontSize: 24))),
+    const Center(child: Text('Settings', style: TextStyle(fontSize: 24))),
   ];
 
   void _onItemTapped(int index) {
@@ -24,22 +36,22 @@ class _BottomNavBarState extends State<BottomNavBar> {
     });
   }
 
-  static const List<Widget> _pages = <Widget>[
-    HomeScreen(),
-    Center(child: Text('Collected', style: TextStyle(fontSize: 24))),
-    Center(child: Text('Warehous', style: TextStyle(fontSize: 24))),
-    Center(child: Text('Settings', style: TextStyle(fontSize: 24))),
-  ];
-
   @override
   Widget build(BuildContext context) {
+    final isBaseScreenApplied = _selectedIndex != 3; // Settings는 BaseScreen 미적용
+
     return SafeArea(
       top: false,
       child: Scaffold(
-        body: _pages[_selectedIndex],
+        body: isBaseScreenApplied
+            ? BaseScreen(
+          page: pages[_selectedIndex],
+          body: bodies[_selectedIndex],
+        )
+            : bodies[_selectedIndex], // Settings는 BaseScreen 없이 바로 표시
         bottomNavigationBar: Container(
           height: 70,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: Colors.white,
             boxShadow: [
               BoxShadow(
@@ -50,30 +62,22 @@ class _BottomNavBarState extends State<BottomNavBar> {
               )
             ],
           ),
-          padding: EdgeInsets.all(10),
-          child: Flex(
-            direction: Axis.horizontal,
-            children: List.generate(_icons.length, (index) {
-              final bool isSelected = index == _selectedIndex;
+          padding: const EdgeInsets.all(10),
+          child: Row(
+            children: List.generate(pages.length, (index) {
+              final isSelected = index == _selectedIndex;
 
-              return Flexible(
-                flex: 1,
+              return Expanded(
                 child: GestureDetector(
                   onTap: () => _onItemTapped(index),
-                  behavior: HitTestBehavior.translucent,
-                  child: Container(
-                    width: double.infinity,
-                    height: double.infinity,
-                    alignment: Alignment.center,
-                    child: AnimatedContainer(
-                      duration: const Duration(milliseconds: 300),
-                      curve: Curves.easeInOut,
-                      width: isSelected ? 35 : 30,
-                      height: isSelected ? 35 : 30,
-                      child: SvgPicture.asset(
-                        _icons[index],
-                        color: isSelected ? mainColor : Colors.grey,
-                      ),
+                  child: AnimatedContainer(
+                    duration: const Duration(milliseconds: 300),
+                    curve: Curves.easeInOut,
+                    width: isSelected ? 35 : 30,
+                    height: isSelected ? 35 : 30,
+                    child: SvgPicture.asset(
+                      'assets/icons/icon_${pages[index].name.toLowerCase()}.svg',
+                      color: isSelected ? mainColor : Colors.grey,
                     ),
                   ),
                 ),
@@ -85,3 +89,4 @@ class _BottomNavBarState extends State<BottomNavBar> {
     );
   }
 }
+
