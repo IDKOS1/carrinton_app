@@ -1,6 +1,7 @@
 import 'package:carrinton_app/ui/login/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() async {
   final widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
@@ -20,11 +21,12 @@ void main() async {
   // 앱 초기 작업을 끝내기 전 스플래시 화면 표시
   await Future.delayed(const Duration(seconds: 2));
 
-  runApp(const MyApp());
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -38,5 +40,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-

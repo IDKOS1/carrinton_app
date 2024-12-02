@@ -1,4 +1,5 @@
 import 'package:carrinton_app/theme/colors.dart';
+import 'package:carrinton_app/ui/bottom_nav_bar.dart';
 import 'package:carrinton_app/ui/home/home_screen.dart';
 import 'package:carrinton_app/ui/login/widget.dart';
 import 'package:flutter/material.dart';
@@ -136,7 +137,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const HomeScreen()));
+                              builder: (context) => BottomNavBar()));
                     },
                   )
                 ],
