@@ -1,4 +1,4 @@
-import 'package:carrinton_app/models/StoreInfo.dart';
+import 'package:carrinton_app/models/store_info_model.dart';
 import 'package:carrinton_app/theme/colors.dart';
 import 'package:carrinton_app/ui/home/widget.dart';
 import 'package:flutter/material.dart';
