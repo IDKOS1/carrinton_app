@@ -1,4 +1,3 @@
-
 import 'package:carrinton_app/models/collect_info_model.dart';
 import 'package:carrinton_app/models/nav_enum_model.dart';
 import 'package:carrinton_app/provider/base/circle_progress_provider.dart';
@@ -19,9 +18,10 @@ class CollectStatusBar extends StatelessWidget {
     Widget info;
     if (page == Nav.home) {
       info = Row(
+        key: const ValueKey('home'),
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          SizedBox(width: 80),
+          const SizedBox(width: 80),
           CollectInfoContent(
               title: 'Collected', content: collectInfo.collected.toString()),
           CollectInfoContent(
@@ -32,12 +32,39 @@ class CollectStatusBar extends StatelessWidget {
       );
     } else {
       info = Row(
+        key: const ValueKey('deail'),
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           const SizedBox(width: 80),
-          CollectInfoContent(
-              title: 'Collected',
-              content: '${collectInfo.collected}/ ${collectInfo.total}'),
+          Container(
+            width: 80,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('${collectInfo.collected}',
+                        style: const TextStyle(
+                            color: mainColor,
+                            fontWeight: FontWeight.w700,
+                            fontSize: 16)),
+                    Text(' / ${collectInfo.total}',
+                        style: const TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.w700,
+                            fontSize: 16))
+                  ],
+                ),
+                const Text(
+                  'Collected',
+                  style: TextStyle(
+                      color: Color(0xFF4C4B4B), fontWeight: FontWeight.w700),
+                )
+              ],
+            ),
+          ),
           CollectInfoContent(
               title: 'Jerry Can', content: collectInfo.jerryCan.toString()),
           Container(
@@ -50,7 +77,7 @@ class CollectStatusBar extends StatelessWidget {
                   children: [
                     Text(
                       '${collectInfo.canWeight}',
-                      style: TextStyle(
+                      style: const TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.w700,
                           fontSize: 16),
@@ -66,7 +93,7 @@ class CollectStatusBar extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text('${collectInfo.moveDistance}',
-                        style: TextStyle(
+                        style: const TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.w700,
                             fontSize: 16)),
@@ -119,7 +146,15 @@ class CollectStatusBar extends StatelessWidget {
           ),
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 10),
-            child: info,
+            child: AnimatedSwitcher(
+                duration: const Duration(milliseconds: 300),
+                transitionBuilder: (Widget child, Animation<double> animation) {
+                  return FadeTransition(
+                    opacity: animation,
+                    child: child,
+                  );
+                },
+                child: info),
           ),
         ),
         const Padding(
@@ -145,13 +180,13 @@ class CollectInfoContent extends StatelessWidget {
       child: Column(
         children: [
           Text('$content',
-              style: TextStyle(
+              style: const TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.w700,
                   fontSize: 16)),
           Text(
             title,
-            style: TextStyle(
+            style: const TextStyle(
                 color: Color(0xFF4C4B4B), fontWeight: FontWeight.w700),
           )
         ],
@@ -172,6 +207,8 @@ class CircleProgressBar extends ConsumerWidget {
         padding: const EdgeInsets.all(12),
         width: 90,
         height: 90,
+        decoration:
+            const BoxDecoration(color: Colors.white, shape: BoxShape.circle),
         child: DashedCircularProgressBar.aspectRatio(
           aspectRatio: 1,
           valueNotifier: ValueNotifier(progress),
@@ -196,4 +233,3 @@ class CircleProgressBar extends ConsumerWidget {
         ));
   }
 }
-

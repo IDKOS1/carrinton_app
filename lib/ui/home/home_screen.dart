@@ -1,5 +1,5 @@
 import 'package:carrinton_app/models/flex_button.dart';
-import 'package:carrinton_app/provider/base/selectedIndex.dart';
+import 'package:carrinton_app/provider/base/selected_index.dart';
 import 'package:carrinton_app/service/MockStoreInfo.dart';
 import 'package:carrinton_app/ui/base/widgets/row_button.dart';
 import 'package:carrinton_app/ui/home/store_detail_screen.dart';
@@ -21,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Column(
       children: [
         RowButton(
-          stateProvider: HomeIndexProvider,
+          stateProvider: homeIndexProvider,
           buttonList: [
             FlexButton(
                 title: 'Morning', onTap: () {}, flex: 4, isClickable: true),
