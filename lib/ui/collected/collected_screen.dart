@@ -1,7 +1,6 @@
-import 'package:carrinton_app/models/nav_enum_model.dart';
-import 'package:carrinton_app/theme/colors.dart';
-import 'package:carrinton_app/ui/base/base_screen.dart';
-import 'package:carrinton_app/ui/home/widget.dart';
+import 'package:carrinton_app/models/flex_button.dart';
+import 'package:carrinton_app/provider/base/selectedIndex.dart';
+import 'package:carrinton_app/ui/base/widgets/row_button.dart';
 import 'package:flutter/material.dart';
 
 class CollectedScreen extends StatefulWidget {
@@ -16,22 +15,20 @@ class _CollectedScreenState extends State<CollectedScreen> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            MediumTextBox(
-              title: 'Collected',
-              backgroundColor: mainColor,
-              textColor: Colors.white,
-              borderColor: Colors.transparent,
-            ),
-            SizedBox(width: 8,),
-            MediumTextBox(title: 'Not Collected'),
-            SizedBox(width: 8,),
-            MediumTextBox(title: 'ALL'),
+        RowButton(
+          stateProvider: CollectIndxProvider,
+          buttonList: [
+            FlexButton(
+                title: 'Collected', onTap: () {}, flex: 2, isClickable: true),
+            FlexButton(
+                title: 'Not Collected',
+                onTap: () {},
+                flex: 3,
+                isClickable: true),
+            FlexButton(title: 'All ', onTap: () {}, flex: 1, isClickable: true)
           ],
         ),
-        const SizedBox(
+        SizedBox(
           height: 16,
         ),
         Placeholder()

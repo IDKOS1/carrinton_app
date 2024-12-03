@@ -1,8 +1,9 @@
 import 'package:carrinton_app/models/store_info_model.dart';
 import 'package:carrinton_app/theme/colors.dart';
-import 'package:carrinton_app/ui/home/widget.dart';
+import 'package:carrinton_app/ui/base/widgets/medium_text_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
 
 class StoreDetailScreen extends StatefulWidget {
   final StoreInfo storeInfo;

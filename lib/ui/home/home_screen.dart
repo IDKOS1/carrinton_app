@@ -1,9 +1,10 @@
-import 'package:carrinton_app/models/nav_enum_model.dart';
+import 'package:carrinton_app/models/flex_button.dart';
+import 'package:carrinton_app/provider/base/selectedIndex.dart';
 import 'package:carrinton_app/service/MockStoreInfo.dart';
-import 'package:carrinton_app/theme/colors.dart';
-import 'package:carrinton_app/ui/base/base_screen.dart';
+import 'package:carrinton_app/ui/base/widgets/row_button.dart';
 import 'package:carrinton_app/ui/home/store_detail_screen.dart';
-import 'package:carrinton_app/ui/home/widget.dart';
+import 'package:carrinton_app/ui/home/widgets/store_information.dart';
+
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -16,20 +17,21 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+
     return Column(
       children: [
-        const Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            MediumTextBox(
-              title: 'Morning',
-              backgroundColor: mainColor,
-              textColor: Colors.white,
-              borderColor: Colors.transparent,
-            ),
-            MediumTextBox(title: 'Afternoon'),
-            MediumTextBox(title: 'Night'),
-            MediumTextBox(title: 'Pending'),
+        RowButton(
+          stateProvider: HomeIndexProvider,
+          buttonList: [
+            FlexButton(
+                title: 'Morning', onTap: () {}, flex: 4, isClickable: true),
+            FlexButton(
+                title: 'Afternoon',
+                onTap: () {},
+                flex: 5,
+                isClickable: true),
+            FlexButton(title: 'Night ', onTap: () {}, flex: 3, isClickable: true),
+            FlexButton(title: 'Pending ', onTap: () {}, flex: 4, isClickable: true)
           ],
         ),
         const SizedBox(

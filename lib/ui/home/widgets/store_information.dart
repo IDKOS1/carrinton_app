@@ -3,39 +3,6 @@ import 'package:carrinton_app/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class MediumTextBox extends StatelessWidget {
-  final String title;
-  final Color backgroundColor;
-  final Color textColor;
-  final Color borderColor;
-  final EdgeInsetsGeometry padding;
-
-  const MediumTextBox(
-      {super.key,
-      required this.title,
-      this.backgroundColor = Colors.white,
-      this.textColor = middleGray,
-      this.borderColor = middleGray,
-      this.padding = const EdgeInsets.all(10)});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: padding,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        border: Border.all(color: borderColor),
-        color: backgroundColor,
-      ),
-      alignment: Alignment.center,
-      child: Text(
-        title,
-        style: TextStyle(
-            fontSize: 16, color: textColor, fontWeight: FontWeight.w700),
-      ),
-    );
-  }
-}
 
 class StoreInformation extends StatelessWidget {
   final StoreInfo storeInfo;
@@ -79,7 +46,9 @@ class StoreInformation extends StatelessWidget {
                         fontWeight: FontWeight.w700,
                       ),
                     ),
-                    SizedBox(height: 8,),
+                    SizedBox(
+                      height: 8,
+                    ),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start, // 상단 정렬
                       children: [
