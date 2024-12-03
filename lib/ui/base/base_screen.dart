@@ -3,7 +3,8 @@ import 'package:carrinton_app/provider/base/collect_info_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'widget.dart';
+import 'widgets/status_bar.dart';
+import 'widgets//top_profile.dart';
 
 class BaseScreen extends ConsumerWidget {
   final Nav page;
