@@ -1,5 +1,5 @@
 import 'package:carrinton_app/models/flex_button.dart';
-import 'package:carrinton_app/provider/base/selectedIndex.dart';
+import 'package:carrinton_app/provider/base/selected_index.dart';
 import 'package:carrinton_app/ui/base/widgets/row_button.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +16,7 @@ class _CollectedScreenState extends State<CollectedScreen> {
     return Column(
       children: [
         RowButton(
-          stateProvider: CollectIndxProvider,
+          stateProvider: collectIndxProvider,
           buttonList: [
             FlexButton(
                 title: 'Collected', onTap: () {}, flex: 2, isClickable: true),
@@ -36,3 +36,4 @@ class _CollectedScreenState extends State<CollectedScreen> {
     );
   }
 }
+
