@@ -2,7 +2,9 @@ import 'package:carrinton_app/models/nav_enum_model.dart';
 import 'package:carrinton_app/theme/colors.dart';
 import 'package:carrinton_app/ui/base/base_screen.dart';
 import 'package:carrinton_app/ui/collected/collected_screen.dart';
+import 'package:carrinton_app/ui/container/ware_house_screen.dart';
 import 'package:carrinton_app/ui/home/home_screen.dart';
+import 'package:carrinton_app/ui/setting/setting_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -26,8 +28,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
   final List<Widget> bodies = [
     const HomeScreen(),
     const CollectedScreen(),
-    const Center(child: Text('Warehouse', style: TextStyle(fontSize: 24))),
-    const Center(child: Text('Settings', style: TextStyle(fontSize: 24))),
+    const WarehouseScreen(),
+    const SettingScreen(),
   ];
 
   void _onItemTapped(int index) {

@@ -1,10 +1,11 @@
 import 'package:carrinton_app/theme/colors.dart';
+import 'package:carrinton_app/theme/text_style.dart';
 import 'package:flutter/material.dart';
 
 class MediumTextBox extends StatelessWidget {
   final String title;
   final Color? backgroundColor;
-  final Color? textColor;
+  final Color textColor;
   final Color? borderColor;
   final EdgeInsetsGeometry padding;
   final int flex;
@@ -37,8 +38,8 @@ class MediumTextBox extends StatelessWidget {
           alignment: Alignment.center,
           child: Text(
             title,
-            style: TextStyle(
-                fontSize: 16, color: textColor ?? middleGray, fontWeight: FontWeight.w700),
+              textAlign: TextAlign.center,
+            style: CustomStyle.headMedium(color: textColor),
           ),
         ),
       ),

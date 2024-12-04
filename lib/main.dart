@@ -18,9 +18,6 @@ void main() async {
     ],
   );
 
-  // 앱 초기 작업을 끝내기 전 스플래시 화면 표시
-  await Future.delayed(const Duration(seconds: 2));
-
   runApp(const ProviderScope(child: MyApp()));
 }
 

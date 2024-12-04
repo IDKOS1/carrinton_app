@@ -1,6 +1,5 @@
 import 'package:carrinton_app/theme/colors.dart';
 import 'package:carrinton_app/ui/bottom_nav_bar.dart';
-import 'package:carrinton_app/ui/home/home_screen.dart';
 import 'package:carrinton_app/ui/login/widget.dart';
 import 'package:flutter/material.dart';
 
@@ -27,7 +26,7 @@ class _LoginScreenState extends State<LoginScreen> {
           behavior: HitTestBehavior.opaque,
           child: Center(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 32.0),
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
