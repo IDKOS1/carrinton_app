@@ -1,9 +1,13 @@
 import 'package:carrinton_app/models/store_info_model.dart';
 import 'package:carrinton_app/theme/colors.dart';
+import 'package:carrinton_app/theme/text_style.dart';
 import 'package:carrinton_app/ui/base/widgets/medium_text_box.dart';
+import 'package:carrinton_app/ui/home/store_detail_screen/store_no_collected_screen.dart';
+import 'package:carrinton_app/ui/home/widgets/jerry_can_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import 'store_collected_screen.dart';
 
 class StoreDetailScreen extends StatefulWidget {
   final StoreInfo storeInfo;
@@ -25,14 +29,8 @@ class _StoreDetailScreenState extends State<StoreDetailScreen> {
       child: Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: const Text(
-            'TITLE',
-            style: TextStyle(
-              color: mainColor,
-              fontSize: 24,
-              fontWeight: FontWeight.w700,
-            ),
-          ),
+          title:
+              Text('TITLE', style: CustomStyle.appBarTitle(color: mainColor)),
           leading: IconButton(
             icon: const Icon(
               Icons.arrow_back,
@@ -119,15 +117,10 @@ class _StoreDetailScreenState extends State<StoreDetailScreen> {
                                     ),
                                   ),
                                   const SizedBox(width: 10),
-                                  const Text(
+                                  Text(
                                     'Edit Photo',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 14,
-                                      fontFamily: 'DM Sans',
-                                      fontWeight: FontWeight.w700,
-                                      height: 0,
-                                    ),
+                                    style: CustomStyle.boldBody(
+                                        color: Colors.white),
                                   ),
                                 ],
                               ),
@@ -142,14 +135,9 @@ class _StoreDetailScreenState extends State<StoreDetailScreen> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
-                                  storeInfo.title,
-                                  style: const TextStyle(
-                                    color: mainColor,
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w700,
-                                  ),
-                                ),
+                                Text(storeInfo.title,
+                                    style: CustomStyle.headMedium(
+                                        color: mainColor)),
                                 const SizedBox(height: 8),
                                 Row(
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -162,15 +150,8 @@ class _StoreDetailScreenState extends State<StoreDetailScreen> {
                                       ),
                                     ),
                                     Expanded(
-                                      child: Text(
-                                        storeInfo.location,
-                                        style: const TextStyle(
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.w400,
-                                        ),
-                                        softWrap: true, // 자동 줄바꿈 허용
-                                        overflow: TextOverflow.visible,
-                                      ),
+                                      child: Text(storeInfo.location,
+                                          style: CustomStyle.bodySmall()),
                                     ),
                                   ],
                                 ),
@@ -186,10 +167,7 @@ class _StoreDetailScreenState extends State<StoreDetailScreen> {
                                     Expanded(
                                       child: Text(
                                         storeInfo.number,
-                                        style: const TextStyle(
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.w400,
-                                        ),
+                                        style: CustomStyle.bodySmall(),
                                         softWrap: true, // 자동 줄바꿈 허용
                                         overflow: TextOverflow.visible,
                                       ),
@@ -199,13 +177,10 @@ class _StoreDetailScreenState extends State<StoreDetailScreen> {
                                 const SizedBox(
                                   height: 8,
                                 ),
-                                const Text(
+                                Text(
                                   'Price : 100MYR',
                                   textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.w400,
-                                  ),
+                                  style: CustomStyle.bodySmall(),
                                 ),
                                 const SizedBox(height: 8),
                                 Container(
@@ -217,13 +192,11 @@ class _StoreDetailScreenState extends State<StoreDetailScreen> {
                                     // 배경 색상
                                     borderRadius: BorderRadius.circular(20),
                                   ),
-                                  child: const Text(
+                                  child: Text(
                                     'Self Declaration Contract',
                                     textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w700,
-                                    ),
+                                    style: CustomStyle.boldBody(
+                                        color: Colors.white),
                                   ),
                                 ),
                                 const SizedBox(
@@ -238,52 +211,30 @@ class _StoreDetailScreenState extends State<StoreDetailScreen> {
                   const SizedBox(
                     height: 20,
                   ),
-                  const Text(
-                    'Jerry can number at the shop',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
+                  Text('Jerry can number at the shop',
+                      style: CustomStyle.boldBody()),
                   const SizedBox(
                     height: 8,
                   ),
-                  Container(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 10, vertical: 16),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    child: const Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        MediumTextBox(
-                          title: 'S.08021',
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 20, vertical: 10),
-                          textColor: orange,
-                          borderColor: orange,
-                        ),
-                        MediumTextBox(
-                          title: 'S.08021',
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 20, vertical: 10),
-                          textColor: orange,
-                          borderColor: orange,
-                        ),
-                        MediumTextBox(
-                          title: 'S.08021',
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 20, vertical: 10),
-                          textColor: orange,
-                          borderColor: orange,
-                        )
-                      ],
-                    ),
+                  JerryCanList(
+                    canList: [
+                      'S.080245',
+                      'S.0802433452',
+                      'S.08023453',
+                      'S.084',
+                      'S.084024',
+                      'P.24',
+                    ],
                   ),
                   const SizedBox(
                     height: 20,
+                  ),
+                  Text(
+                    'Please select whether to collect',
+                    style: CustomStyle.boldBody(),
+                  ),
+                  const SizedBox(
+                    height: 8,
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10.0),
@@ -304,12 +255,10 @@ class _StoreDetailScreenState extends State<StoreDetailScreen> {
                             padding: EdgeInsets.symmetric(vertical: 10),
                             alignment: Alignment.center,
                             child: Text('Collected',
-                                style: TextStyle(
-                                    fontSize: 16,
+                                style: CustomStyle.headMedium(
                                     color: selectCollect
                                         ? Colors.white
-                                        : middleGray,
-                                    fontWeight: FontWeight.w700)),
+                                        : middleGray)),
                           ),
                           onTap: () {
                             setState(() {
@@ -337,12 +286,10 @@ class _StoreDetailScreenState extends State<StoreDetailScreen> {
                             padding: EdgeInsets.symmetric(vertical: 10),
                             alignment: Alignment.center,
                             child: Text('No Collected',
-                                style: TextStyle(
-                                    fontSize: 16,
+                                style: CustomStyle.headMedium(
                                     color: selectCollect
                                         ? middleGray
-                                        : Colors.white,
-                                    fontWeight: FontWeight.w700)),
+                                        : Colors.white)),
                           ),
                           onTap: () {
                             setState(() {
@@ -353,7 +300,12 @@ class _StoreDetailScreenState extends State<StoreDetailScreen> {
                       )
                     ]),
                   ),
-                  if (selectCollect) CollectedScreen() else NoCollectionScreen()
+                  if (selectCollect) CollectedScreen() else NoCollectionScreen(),
+                  SizedBox(height: 20,),
+                  Text(
+                    'Picture', style: CustomStyle.headMedium()
+                  ),
+                  SizedBox(height: 8,),
                 ],
               ),
             )),
@@ -382,21 +334,12 @@ class _StoreDetailScreenState extends State<StoreDetailScreen> {
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(6)),
                       ),
-                      child: const Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text(
-                            'COLLECT',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 16,
-                              fontFamily: 'DM Sans',
-                              fontWeight: FontWeight.w700,
-                            ),
-                          ),
-                        ],
+                      child: Center(
+                        child: Text(
+                          'CONFIRM',
+                          textAlign: TextAlign.center,
+                          style: CustomStyle.headMedium(color: Colors.white),
+                        ),
                       ),
                     ),
                     onTap: () {},
@@ -407,122 +350,6 @@ class _StoreDetailScreenState extends State<StoreDetailScreen> {
           ],
         ),
       ),
-    );
-  }
-}
-
-class CollectedScreen extends StatefulWidget {
-  const CollectedScreen({super.key});
-
-  @override
-  State<CollectedScreen> createState() => _CollectedScreenState();
-}
-
-class _CollectedScreenState extends State<CollectedScreen> {
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(vertical: 16),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                'Weight(kg)',
-                style: TextStyle(
-                  color: Color(0xFF0B373D),
-                  fontSize: 16,
-                  fontWeight: FontWeight.w700,
-                  height: 0,
-                ),
-              ),
-              SizedBox(
-                width: 20,
-              ),
-              Expanded(
-                child: Container(
-                  padding: EdgeInsets.symmetric(vertical: 5, horizontal: 20),
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(8)),
-                  child: Align(
-                    alignment: AlignmentDirectional.centerEnd,
-                    child: Text(
-                      '25',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 18,
-                        fontFamily: 'DM Sans',
-                        fontWeight: FontWeight.w700,
-                        height: 0,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                'Amount',
-                style: TextStyle(
-                  color: Color(0xFF0B373D),
-                  fontSize: 16,
-                  fontWeight: FontWeight.w700,
-                  height: 0,
-                ),
-              ),
-              Text(
-                '2,500 MYR',
-                style: TextStyle(
-                  color: mainColor,
-                  fontSize: 18,
-                  fontWeight: FontWeight.w700,
-                  height: 0,
-                ),
-              ),
-            ],
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Text(
-            'New Jerry can number at the shop',
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 16,
-              fontFamily: 'DM Sans',
-              fontWeight: FontWeight.w400,
-            ),
-          ),
-          Row(
-            children: [],
-          )
-        ],
-      ),
-    );
-  }
-}
-
-class NoCollectionScreen extends StatefulWidget {
-  const NoCollectionScreen({super.key});
-
-  @override
-  State<NoCollectionScreen> createState() => _NoCollectionScreenState();
-}
-
-class _NoCollectionScreenState extends State<NoCollectionScreen> {
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder(
-      color: Colors.red,
     );
   }
 }
