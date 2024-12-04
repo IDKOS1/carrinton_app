@@ -24,7 +24,7 @@ class RowButton extends ConsumerWidget {
           MediumTextBox(
             title: buttonList[i].title,
             backgroundColor: selectedIndex == i ? mainColor : null,
-            textColor: selectedIndex == i ? Colors.white : null,
+            textColor: selectedIndex == i ? Colors.white : middleGray,
             borderColor: selectedIndex == i ? Colors.transparent : null,
             flex: buttonList[i].flex,
             onTap: buttonList[i].isClickable

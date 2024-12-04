@@ -2,7 +2,7 @@ import 'package:carrinton_app/models/flex_button.dart';
 import 'package:carrinton_app/provider/base/selected_index.dart';
 import 'package:carrinton_app/service/MockStoreInfo.dart';
 import 'package:carrinton_app/ui/base/widgets/row_button.dart';
-import 'package:carrinton_app/ui/home/store_detail_screen.dart';
+import 'package:carrinton_app/ui/home/store_detail_screen/store_detail_screen.dart';
 import 'package:carrinton_app/ui/home/widgets/store_information.dart';
 
 import 'package:flutter/material.dart';

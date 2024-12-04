@@ -3,7 +3,6 @@ import 'package:carrinton_app/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-
 class StoreInformation extends StatelessWidget {
   final StoreInfo storeInfo;
   final VoidCallback onPressed;
@@ -30,7 +29,7 @@ class StoreInformation extends StatelessWidget {
                 height: 100,
               ),
               SizedBox(
-                width: 20,
+                width: 16,
               ),
               Expanded(
                 child: Column(
@@ -50,7 +49,7 @@ class StoreInformation extends StatelessWidget {
                       height: 8,
                     ),
                     Row(
-                      crossAxisAlignment: CrossAxisAlignment.start, // 상단 정렬
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
                           padding: const EdgeInsets.all(2.0),
@@ -101,27 +100,31 @@ class StoreInformation extends StatelessWidget {
                         ),
                       ],
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          storeInfo.operatingTime,
-                          style: TextStyle(
-                            color: Color(0xFF232C3A),
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
+                    Container(
+                      width: double.infinity,
+                      child: Wrap(
+                        alignment: WrapAlignment.spaceBetween,
+                        crossAxisAlignment: WrapCrossAlignment.center,
+                        children: [
+                          Text(
+                            storeInfo.operatingTime,
+                            style: TextStyle(
+                              color: Color(0xFF232C3A),
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                            ),
                           ),
-                        ),
-                        Text(
-                          '${storeInfo.distance} km',
-                          style: TextStyle(
-                            color: Color(0xFFA9A5B8),
-                            fontSize: 14,
-                            fontFamily: 'DM Sans',
-                            fontWeight: FontWeight.w400,
-                          ),
-                        )
-                      ],
+                          Text(
+                            '${storeInfo.distance} km',
+                            style: TextStyle(
+                              color: Color(0xFFA9A5B8),
+                              fontSize: 14,
+                              fontFamily: 'DM Sans',
+                              fontWeight: FontWeight.w400,
+                            ),
+                          )
+                        ],
+                      ),
                     )
                   ],
                 ),
