@@ -1,4 +1,3 @@
-
 import 'package:carrinton_app/models/collect_info_model.dart';
 import 'package:carrinton_app/models/nav_enum_model.dart';
 import 'package:carrinton_app/provider/base/circle_progress_provider.dart';
@@ -120,7 +119,23 @@ class CollectStatusBar extends StatelessWidget {
     return Stack(
       alignment: Alignment.centerLeft,
       children: [
-        // 원형 그림자 배경 설정
+        // 뒷배경 그림자
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10.0),
+          child: Container(
+            width: 90,
+            height: 90,
+            decoration: BoxDecoration(boxShadow: [
+              BoxShadow(
+                color: shadowColor,
+                spreadRadius: 5,
+                blurRadius: 20,
+              )
+            ]),
+          ),
+        ),
+
+        // 사각형 배경
         Container(
           width: double.infinity,
           decoration: BoxDecoration(
@@ -162,6 +177,8 @@ class CollectStatusBar extends StatelessWidget {
             ],
           ),
         ),
+
+        // 원형 프로그레스바
         const Padding(
           padding: EdgeInsets.symmetric(horizontal: 10.0),
           child: CircleProgressBar(),
@@ -209,6 +226,8 @@ class CircleProgressBar extends ConsumerWidget {
     final progress = ref.watch(progressNotifierProvider);
 
     return Container(
+        decoration:
+            const BoxDecoration(color: Colors.white, shape: BoxShape.circle),
         padding: const EdgeInsets.all(12),
         width: 90,
         height: 90,
@@ -236,4 +255,3 @@ class CircleProgressBar extends ConsumerWidget {
         ));
   }
 }
-
