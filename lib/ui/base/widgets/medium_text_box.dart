@@ -17,7 +17,7 @@ class MediumTextBox extends StatelessWidget {
         this.backgroundColor = Colors.white,
         this.textColor = middleGray,
         this.borderColor = middleGray,
-        this.padding = const EdgeInsets.all(10),
+        this.padding = const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
         this.flex = 0,
         this.onTap
       });
