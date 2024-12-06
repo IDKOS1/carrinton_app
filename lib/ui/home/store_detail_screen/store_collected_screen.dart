@@ -1,6 +1,6 @@
 import 'package:carrinton_app/theme/colors.dart';
 import 'package:carrinton_app/theme/text_style.dart';
-import 'package:carrinton_app/ui/home/widgets/new_jerry_can_list.dart';
+import 'package:carrinton_app/ui/home/store_detail_screen/widgets/new_jerry_can_list.dart';
 import 'package:flutter/material.dart';
 
 class CollectedScreen extends StatelessWidget {

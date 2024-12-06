@@ -9,9 +9,8 @@ class RowButton extends ConsumerWidget {
   final List<FlexButton> buttonList;
   final StateProvider<int> stateProvider;
 
-  const RowButton({super.key, required this.buttonList,
-    required this.stateProvider
-  });
+  const RowButton(
+      {super.key, required this.buttonList, required this.stateProvider});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -29,10 +28,8 @@ class RowButton extends ConsumerWidget {
             flex: buttonList[i].flex,
             onTap: buttonList[i].isClickable
                 ? () {
-              ref
-                  .read(stateProvider.notifier)
-                  .state = i;
-            }
+                    ref.read(stateProvider.notifier).state = i;
+                  }
                 : null,
           ),
           if (i != buttonList.length - 1) const SizedBox(width: 8),
