@@ -2,6 +2,7 @@ import 'package:carrinton_app/models/collect_info_model.dart';
 import 'package:carrinton_app/models/nav_enum_model.dart';
 import 'package:carrinton_app/provider/base/circle_progress_provider.dart';
 import 'package:carrinton_app/theme/colors.dart';
+import 'package:carrinton_app/theme/text_style.dart';
 import 'package:dashed_circular_progress_bar/dashed_circular_progress_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -18,11 +19,12 @@ class CollectStatusBar extends StatelessWidget {
     Widget info;
     if (page == Nav.home) {
       info = Container(
+        key: const ValueKey('home'),
         width: double.infinity,
         child: Wrap(
-          key: const ValueKey('home'),
           runSpacing: 16,
           alignment: WrapAlignment.spaceBetween,
+          crossAxisAlignment: WrapCrossAlignment.center,
           children: [
             CollectInfoContent(
                 title: 'Collected', content: collectInfo.collected.toString()),
@@ -35,11 +37,12 @@ class CollectStatusBar extends StatelessWidget {
       );
     } else {
       info = Container(
+        key: const ValueKey('detail'),
         width: double.infinity,
         child: Wrap(
           runSpacing: 16,
-          key: const ValueKey('deail'),
           alignment: WrapAlignment.spaceBetween,
+          crossAxisAlignment: WrapCrossAlignment.center,
           children: [
             Container(
               width: 70,
@@ -51,10 +54,7 @@ class CollectStatusBar extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text('${collectInfo.collected}',
-                          style: const TextStyle(
-                              color: mainColor,
-                              fontWeight: FontWeight.w700,
-                              fontSize: 16)),
+                          style: CustomStyle.headMedium(color: mainColor)),
                       Text(' / ${collectInfo.total}',
                           style: const TextStyle(
                               color: Colors.black,
@@ -82,10 +82,7 @@ class CollectStatusBar extends StatelessWidget {
                     children: [
                       Text(
                         '${collectInfo.canWeight}',
-                        style: const TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.w700,
-                            fontSize: 16),
+                        style: CustomStyle.headMedium(),
                       ),
                       const Text(' kg',
                           style: TextStyle(
@@ -134,7 +131,6 @@ class CollectStatusBar extends StatelessWidget {
             ]),
           ),
         ),
-
         // 사각형 배경
         Container(
           width: double.infinity,
@@ -156,21 +152,19 @@ class CollectStatusBar extends StatelessWidget {
                 width: 110,
               ),
               Expanded(
-                child: Container(
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 15.0, horizontal: 10),
-                    child: AnimatedSwitcher(
-                      duration: const Duration(milliseconds: 300),
-                      transitionBuilder:
-                          (Widget child, Animation<double> animation) {
-                        return FadeTransition(
-                          opacity: animation,
-                          child: child,
-                        );
-                      },
-                      child: info,
-                    ),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                      vertical: 15.0, horizontal: 10),
+                  child: AnimatedSwitcher(
+                    duration: const Duration(milliseconds: 300),
+                    transitionBuilder:
+                        (Widget child, Animation<double> animation) {
+                      return FadeTransition(
+                        opacity: animation,
+                        child: child,
+                      );
+                    },
+                    child: info,
                   ),
                 ),
               ),

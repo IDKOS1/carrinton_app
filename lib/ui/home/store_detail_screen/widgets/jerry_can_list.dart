@@ -17,8 +17,9 @@ class JerryCanList extends StatelessWidget {
           borderRadius: BorderRadius.circular(10.0),
         ),
         child: Wrap(
+          alignment: WrapAlignment.start,
           spacing: 8,
-          runSpacing: 16,
+          runSpacing: 8,
           children: canList.map((can) => JerryCan(canNumber: can)).toList(),
         ));
   }
@@ -40,6 +41,7 @@ class JerryCan extends StatelessWidget {
       child: Text(
         canNumber,
         style: CustomStyle.headMedium(color: orange),
+        textAlign: TextAlign.center,
       ),
     );
   }
