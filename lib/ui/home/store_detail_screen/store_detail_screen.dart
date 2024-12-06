@@ -1,11 +1,16 @@
+import 'dart:io';
+
+import 'package:camera/camera.dart';
 import 'package:carrinton_app/models/store_info_model.dart';
 import 'package:carrinton_app/theme/colors.dart';
 import 'package:carrinton_app/theme/text_style.dart';
 import 'package:carrinton_app/ui/home/store_detail_screen/store_no_collected_screen.dart';
 import 'package:carrinton_app/ui/home/store_detail_screen/widgets/jerry_can_list.dart';
 import 'package:carrinton_app/ui/home/store_detail_screen/widgets/select_collected_box.dart';
+import 'package:carrinton_app/ui/util/capture_camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:syncfusion_flutter_signaturepad/signaturepad.dart';
 
 import 'store_collected_screen.dart';
@@ -13,6 +18,10 @@ import 'widgets/store_info.dart';
 
 // 수집 여부 상태를 관리하기 위한 Provider (초기값은 true)
 final selectCollectProvider = StateProvider.autoDispose<bool>((ref) => true);
+
+final restaurantImageProvider = StateProvider.autoDispose<XFile?>((ref) => null);
+final oldJerryCanImageProvider = StateProvider.autoDispose<XFile?>((ref) => null);
+final newJerryCanImageProvider = StateProvider.autoDispose<XFile?>((ref) => null);
 
 class StoreDetailScreen extends ConsumerWidget {
   final StoreInfo storeInfo;
@@ -176,21 +185,32 @@ class StoreDetailScreen extends ConsumerWidget {
                       SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Container(
-                          constraints: BoxConstraints(minWidth: 250),
+                          constraints: BoxConstraints(minWidth: 500),
                           width: MediaQuery.of(context).size.width - 32,
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              CaptureCamera(),
+                              CaptureCamera(
+                                imageName: 'Restaurant Picture',
+                                imageProvider: restaurantImageProvider,
+                              ),
                               SizedBox(width: 8),
-                              CaptureCamera(),
+                              CaptureCamera(
+                                imageName: 'Old Jerry Can',
+                                imageProvider: oldJerryCanImageProvider,
+                              ),
                               SizedBox(width: 8),
-                              CaptureCamera(),
+                              CaptureCamera(
+                                imageName: 'New Jerry Can',
+                                imageProvider: newJerryCanImageProvider,
+                              ),
                             ],
                           ),
                         ),
                       ),
-                      SizedBox(height: 16,),
+                      SizedBox(
+                        height: 16,
+                      ),
                       Container(
                         width: double.infinity,
                         height: 200,
@@ -202,12 +222,12 @@ class StoreDetailScreen extends ConsumerWidget {
                           ),
                         ),
                       ),
-                      ElevatedButton(onPressed: () {
-                        _signaturePadKey.currentState!.clear();
-                      }, 
-                          child: Text('CLEAR')
-                      ),]
-                ),
+                      ElevatedButton(
+                          onPressed: () {
+                            _signaturePadKey.currentState!.clear();
+                          },
+                          child: Text('CLEAR')),
+                    ]),
               ),
             ),
             // 화면 하단의 확인 버튼
@@ -250,44 +270,6 @@ class StoreDetailScreen extends ConsumerWidget {
                   ),
                 ],
               ),
-            )
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class CaptureCamera extends ConsumerWidget {
-  const CaptureCamera({super.key});
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    return Flexible(
-      flex: 1,
-      child: Container(
-        constraints: const BoxConstraints(minWidth: 100, maxWidth: 180),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            AspectRatio(
-              aspectRatio: 4 / 3,
-              child: Container(
-                  decoration:
-                      BoxDecoration(borderRadius: BorderRadius.circular(10)),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(10),
-                    child: Image.asset(
-                      'assets/images/sample_store_image.png',
-                      fit: BoxFit.cover,
-                    ),
-                  )),
-            ),
-            SizedBox(height: 4,),
-            Text(
-              'Restaurant Picture',
-              style: CustomStyle.bodySmall(),
-              textAlign: TextAlign.center,
             )
           ],
         ),
