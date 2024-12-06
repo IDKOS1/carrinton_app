@@ -1,9 +1,11 @@
 import 'dart:io';
 
 import 'package:camera/camera.dart';
+import 'package:carrinton_app/models/flex_button.dart';
 import 'package:carrinton_app/models/store_info_model.dart';
 import 'package:carrinton_app/theme/colors.dart';
 import 'package:carrinton_app/theme/text_style.dart';
+import 'package:carrinton_app/ui/base/widgets/row_button.dart';
 import 'package:carrinton_app/ui/home/store_detail_screen/store_no_collected_screen.dart';
 import 'package:carrinton_app/ui/home/store_detail_screen/widgets/jerry_can_list.dart';
 import 'package:carrinton_app/ui/home/store_detail_screen/widgets/select_collected_box.dart';
@@ -19,9 +21,12 @@ import 'widgets/store_info.dart';
 // 수집 여부 상태를 관리하기 위한 Provider (초기값은 true)
 final selectCollectProvider = StateProvider.autoDispose<bool>((ref) => true);
 
-final restaurantImageProvider = StateProvider.autoDispose<XFile?>((ref) => null);
-final oldJerryCanImageProvider = StateProvider.autoDispose<XFile?>((ref) => null);
-final newJerryCanImageProvider = StateProvider.autoDispose<XFile?>((ref) => null);
+final restaurantImageProvider =
+    StateProvider.autoDispose<XFile?>((ref) => null);
+final oldJerryCanImageProvider =
+    StateProvider.autoDispose<XFile?>((ref) => null);
+final newJerryCanImageProvider =
+    StateProvider.autoDispose<XFile?>((ref) => null);
 
 class StoreDetailScreen extends ConsumerWidget {
   final StoreInfo storeInfo;
@@ -185,7 +190,7 @@ class StoreDetailScreen extends ConsumerWidget {
                       SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Container(
-                          constraints: BoxConstraints(minWidth: 500),
+                          constraints: BoxConstraints(minWidth: 350),
                           width: MediaQuery.of(context).size.width - 32,
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.start,
@@ -209,24 +214,134 @@ class StoreDetailScreen extends ConsumerWidget {
                         ),
                       ),
                       SizedBox(
-                        height: 16,
+                        height: 24,
                       ),
-                      Container(
-                        width: double.infinity,
-                        height: 200,
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(10),
-                          child: SfSignaturePad(
-                            key: _signaturePadKey,
-                            backgroundColor: lightGray,
+                      // 서명
+                      Text(
+                        'signature',
+                        style: CustomStyle.headMedium(),
+                      ),
+                      SizedBox(
+                        height: 8,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          GestureDetector(
+                            onTap: () {
+                              showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return AlertDialog(
+                                    backgroundColor: Colors.white,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    titlePadding: const EdgeInsets.all(16),
+                                    contentPadding: const EdgeInsets.symmetric(
+                                        horizontal: 16, vertical: 8),
+                                    actionsPadding: const EdgeInsets.only(
+                                        bottom: 16),
+                                    title: Text(
+                                      "signature",
+                                      style: CustomStyle.appBarTitle(),
+                                    ),
+                                    content: AspectRatio(
+                                      aspectRatio: 4 / 3,
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          color: Colors.white,
+                                          border: Border.all(color: middleGray),
+                                        ),
+                                        child: SfSignaturePad(
+                                          key: _signaturePadKey,
+                                        ),
+                                      ),
+                                    ),
+                                    actions: [
+                                      Padding(
+                                        padding: const EdgeInsets.all(16.0),
+                                        child: Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Flexible(
+                                              child: GestureDetector(
+                                                  onTap: () {
+                                                    _signaturePadKey.currentState!
+                                                        .clear();
+                                                  },
+                                                  child: Container(
+                                                    width: double.infinity,
+                                                    padding: EdgeInsets.all(10),
+                                                    decoration: BoxDecoration(
+                                                        borderRadius: BorderRadius.circular(10),
+                                                        color: Colors.white,
+                                                        border: Border.all(color: middleGray)
+                                                    ),
+                                                    child: Center(
+                                                      child: Text('Retry', style: CustomStyle.headMedium(
+                                                          color: middleGray
+                                                      ),),
+                                                    ),
+                                                  )
+                                              ),
+                                            ),
+                                            SizedBox(width: 16,),
+                                            Flexible(
+                                              child: GestureDetector(
+                                                  onTap: () {
+                                                    _signaturePadKey.currentState!
+                                                        .clear();
+                                                  },
+                                                  child: Container(
+                                                    width: double.infinity,
+                                                    padding: EdgeInsets.all(8),
+                                                    decoration: BoxDecoration(
+                                                        borderRadius: BorderRadius.circular(10),
+                                                        color: purple,
+                                                        border: Border.all(color: Colors.transparent)
+                                                    ),
+                                                    child: Center(
+                                                      child: Text('Save', style: CustomStyle.headMedium(
+                                                          color: Colors.white
+                                                      ),),
+                                                    ),
+                                                  )
+                                              ),
+                                            )
+                                          ],
+                                        ),
+                                      )
+
+                                    ],
+                                  );
+                                },
+                              );
+                            },
+                            child: SizedBox(
+                              width: MediaQuery.of(context).size.width * 0.55,
+                              child: AspectRatio(
+                                aspectRatio: 4 / 3,
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(10),
+                                    border: Border.all(color: middleGray),
+                                  ),
+                                ),
+                              ),
+                            ),
                           ),
-                        ),
+                          Text(
+                            'After checking\nPlease sign the PO.',
+                            textAlign: TextAlign.end,
+                            style: CustomStyle.bodySmall(),
+                          )
+                        ],
                       ),
-                      ElevatedButton(
-                          onPressed: () {
-                            _signaturePadKey.currentState!.clear();
-                          },
-                          child: Text('CLEAR')),
                     ]),
               ),
             ),
