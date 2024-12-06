@@ -20,19 +20,26 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return Column(
       children: [
-        RowButton(
-          stateProvider: homeIndexProvider,
-          buttonList: [
-            FlexButton(
-                title: 'Morning', onTap: () {}, flex: 4, isClickable: true),
-            FlexButton(
-                title: 'Afternoon',
-                onTap: () {},
-                flex: 5,
-                isClickable: true),
-            FlexButton(title: 'Night ', onTap: () {}, flex: 3, isClickable: true),
-            FlexButton(title: 'Pending ', onTap: () {}, flex: 4, isClickable: true)
-          ],
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Container(
+            width: MediaQuery.of(context).size.width - 32,
+            constraints: BoxConstraints(minWidth: 360),
+            child: RowButton(
+              stateProvider: homeIndexProvider,
+              buttonList: [
+                FlexButton(
+                    title: 'Morning', onTap: () {}, flex: 4, isClickable: true),
+                FlexButton(
+                    title: 'Afternoon',
+                    onTap: () {},
+                    flex: 5,
+                    isClickable: true),
+                FlexButton(title: 'Night ', onTap: () {}, flex: 3, isClickable: true),
+                FlexButton(title: 'Pending ', onTap: () {}, flex: 4, isClickable: true)
+              ],
+            ),
+          ),
         ),
         const SizedBox(
           height: 16,
