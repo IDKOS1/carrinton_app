@@ -1,9 +1,9 @@
 import 'package:carrinton_app/models/flex_button.dart';
-import 'package:carrinton_app/provider/base/selected_index.dart';
+import 'package:carrinton_app/presentation/ui/base/widgets/row_button.dart';
+import 'package:carrinton_app/presentation/ui/home/store_detail_screen/store_detail_screen.dart';
+import 'package:carrinton_app/presentation/ui/home/widgets/store_information.dart';
+import 'package:carrinton_app/presentation/ui/view_models/base/selected_index.dart';
 import 'package:carrinton_app/service/MockStoreInfo.dart';
-import 'package:carrinton_app/ui/base/widgets/row_button.dart';
-import 'package:carrinton_app/ui/home/store_detail_screen/store_detail_screen.dart';
-import 'package:carrinton_app/ui/home/widgets/store_information.dart';
 import 'package:flutter/material.dart';
 
 class CollectedScreen extends StatefulWidget {
@@ -31,9 +31,7 @@ class _CollectedScreenState extends State<CollectedScreen> {
             FlexButton(title: 'All ', onTap: () {}, flex: 1, isClickable: true)
           ],
         ),
-        SizedBox(
-          height: 16,
-        ),
+        SizedBox(height: 16),
         Expanded(
           child: ListView.builder(
             itemCount: MockStoreInfo.storeList.length,

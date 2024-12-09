@@ -1,8 +1,9 @@
+import 'package:carrinton_app/presentation/ui/login/widget.dart';
 import 'package:carrinton_app/theme/colors.dart';
-import 'package:carrinton_app/ui/login/login_screen.dart';
-import 'package:carrinton_app/ui/login/widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+
+import 'login_screen.dart';
 
 class ForgotPasswordSuccess extends StatelessWidget {
   const ForgotPasswordSuccess({super.key});

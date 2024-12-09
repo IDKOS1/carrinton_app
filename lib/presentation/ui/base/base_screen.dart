@@ -1,5 +1,5 @@
 import 'package:carrinton_app/models/nav_enum_model.dart';
-import 'package:carrinton_app/provider/base/collect_info_provider.dart';
+import 'package:carrinton_app/presentation/ui/view_models/base/collect_info_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

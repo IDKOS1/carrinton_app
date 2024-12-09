@@ -1,4 +1,4 @@
-import 'package:carrinton_app/ui/login/widget.dart';
+import 'package:carrinton_app/presentation/ui/login/widget.dart';
 import 'package:flutter/material.dart';
 
 class SettingScreen extends StatelessWidget {
@@ -15,9 +15,7 @@ class SettingScreen extends StatelessWidget {
             Align(
                 alignment: AlignmentDirectional.topStart,
                 child: Image.asset('assets/images/carrington_logo.png')),
-            SizedBox(
-              height: 24,
-            ),
+            const SizedBox(height: 24),
             Container(
               padding: const EdgeInsets.all(1),
               decoration: BoxDecoration(
@@ -33,26 +31,24 @@ class SettingScreen extends StatelessWidget {
                     AssetImage('assets/images/sample_profile_image.png'),
               ),
             ),
-            Text(
+            const Text(
               'Jake',
               style: TextStyle(
                   color: Color(0xFFFF9228),
                   fontSize: 26,
                   fontWeight: FontWeight.w700),
             ),
-            Text('CTM',
+            const Text('CTM',
                 style: TextStyle(
                     color: Color(0xFFC6C6C6),
                     fontSize: 16,
                     fontWeight: FontWeight.w700)),
-            SizedBox(
-              height: 24,
-            ),
+            const SizedBox(height: 24),
             Expanded(
                 child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
@@ -73,8 +69,8 @@ class SettingScreen extends StatelessWidget {
                         ))
                   ],
                 ),
-                SizedBox(height: 16,),
-                Text(
+                const SizedBox(height: 16),
+                const Text(
                   'This is latest version. ',
                   style: TextStyle(
                     color: Color(0xFF4C4B4B),
@@ -84,11 +80,11 @@ class SettingScreen extends StatelessWidget {
                     height: 0,
                   ),
                 ),
-                SizedBox(height: 50,),
+                const SizedBox(height: 50),
                 LargeButton(buttonText: "TRY NOW", onPressed: () {}),
-                SizedBox(height: 20,),
+                const SizedBox(height: 20),
                 LargeButton(buttonText: "REPORT ERROR", onPressed: () {}),
-                SizedBox(height: 20,),
+                const SizedBox(height: 20),
                 LargeButton(buttonText: "LOGOUT", onPressed: () {}),
               ],
             ))

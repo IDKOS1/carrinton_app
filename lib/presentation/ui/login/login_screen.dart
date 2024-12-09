@@ -1,6 +1,6 @@
+import 'package:carrinton_app/presentation/ui/bottom_nav_bar.dart';
+import 'package:carrinton_app/presentation/ui/login/widget.dart';
 import 'package:carrinton_app/theme/colors.dart';
-import 'package:carrinton_app/ui/bottom_nav_bar.dart';
-import 'package:carrinton_app/ui/login/widget.dart';
 import 'package:flutter/material.dart';
 
 import 'forgot_password_screen.dart';

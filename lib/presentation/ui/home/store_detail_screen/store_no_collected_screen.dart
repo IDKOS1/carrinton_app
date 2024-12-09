@@ -1,6 +1,5 @@
 import 'package:carrinton_app/theme/colors.dart';
 import 'package:carrinton_app/theme/text_style.dart';
-import 'package:carrinton_app/ui/home/store_detail_screen/widgets/jerry_can_list.dart';
 import 'package:flutter/material.dart';
 
 class NoCollectedScreen extends StatelessWidget {
