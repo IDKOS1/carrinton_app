@@ -1,6 +1,6 @@
-import 'package:carrinton_app/models/collect_info_model.dart';
-import 'package:carrinton_app/models/nav_enum_model.dart';
-import 'package:carrinton_app/presentation/ui/view_models/base/circle_progress_provider.dart';
+import 'package:carrinton_app/models/models/collect_info_model.dart';
+import 'package:carrinton_app/presentation/view_models/base/nav_enum_model.dart';
+import 'package:carrinton_app/presentation/view_models/base/circle_progress_provider.dart';
 import 'package:carrinton_app/theme/colors.dart';
 import 'package:carrinton_app/theme/text_style.dart';
 import 'package:dashed_circular_progress_bar/dashed_circular_progress_bar.dart';

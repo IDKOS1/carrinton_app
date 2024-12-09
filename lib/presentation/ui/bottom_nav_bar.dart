@@ -1,4 +1,4 @@
-import 'package:carrinton_app/models/nav_enum_model.dart';
+import 'package:carrinton_app/presentation/view_models/base/nav_enum_model.dart';
 import 'package:carrinton_app/presentation/ui/base/base_screen.dart';
 import 'package:carrinton_app/presentation/ui/collected/collected_screen.dart';
 import 'package:carrinton_app/presentation/ui/container/ware_house_screen.dart';

@@ -1,4 +1,4 @@
-import 'package:carrinton_app/models/collect_info_model.dart';
+import 'package:carrinton_app/models/models/collect_info_model.dart';
 
 class MockCollectInfo {
   static final CollectInfo collectInfo = CollectInfo.fromJson({

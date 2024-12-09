@@ -2,7 +2,7 @@ import 'package:carrinton_app/models/flex_button.dart';
 import 'package:carrinton_app/presentation/ui/base/widgets/row_button.dart';
 import 'package:carrinton_app/presentation/ui/home/store_detail_screen/store_detail_screen.dart';
 import 'package:carrinton_app/presentation/ui/home/widgets/store_information.dart';
-import 'package:carrinton_app/presentation/ui/view_models/base/selected_index.dart';
+import 'package:carrinton_app/presentation/view_models/base/selected_index.dart';
 import 'package:carrinton_app/service/MockStoreInfo.dart';
 import 'package:flutter/material.dart';
 
@@ -22,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
           scrollDirection: Axis.horizontal,
           child: Container(
             width: MediaQuery.of(context).size.width - 32,
-            constraints: BoxConstraints(minWidth: 360),
+            constraints: const BoxConstraints(minWidth: 360),
             child: RowButton(
               stateProvider: homeIndexProvider,
               buttonList: [

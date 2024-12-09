@@ -29,9 +29,7 @@ class CollectedScreen extends StatelessWidget {
               Text('Weight(kg)',
                   style:
                       CustomStyle.headMedium(color: const Color(0xFF0B373D))),
-              const SizedBox(
-                width: 20,
-              ),
+              const SizedBox(width: 20),
               Expanded(
                 child: Container(
                   padding: EdgeInsets.symmetric(vertical: 5, horizontal: 20),
@@ -49,9 +47,7 @@ class CollectedScreen extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(
-            height: 20,
-          ),
+          const SizedBox(height: 20),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -62,9 +58,7 @@ class CollectedScreen extends StatelessWidget {
                   style: CustomStyle.headMedium(color: mainColor)),
             ],
           ),
-          const SizedBox(
-            height: 20,
-          ),
+          const SizedBox(height: 20),
           Text('New Jerry can number at the shop',
               style: CustomStyle.bodyMedium()),
           Container(
@@ -76,10 +70,9 @@ class CollectedScreen extends StatelessWidget {
               children: [
                 Expanded(
                   child: TextField(
-                    decoration: InputDecoration(border: InputBorder.none),
-                  ),
+                      decoration: InputDecoration(border: InputBorder.none)),
                 ),
-                SizedBox(width: 16),
+                const SizedBox(width: 16),
                 GestureDetector(
                   onTap: () {},
                   child: Container(
@@ -97,9 +90,7 @@ class CollectedScreen extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(
-            height: 8,
-          ),
+          const SizedBox(height: 8),
           NewJerryCanList(canList: newCanList)
         ],
       ),

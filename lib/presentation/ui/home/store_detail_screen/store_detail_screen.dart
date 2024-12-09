@@ -185,6 +185,7 @@ class StoreDetailScreen extends ConsumerWidget {
                           width: MediaQuery.of(context).size.width - 32,
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               CaptureCamera(
                                 imageName: 'Restaurant Picture',
@@ -204,7 +205,7 @@ class StoreDetailScreen extends ConsumerWidget {
                           ),
                         ),
                       ),
-                      Signature()
+                      Signature(description: 'After checking\nPlease sign the PO',)
                     ]),
               ),
             ),

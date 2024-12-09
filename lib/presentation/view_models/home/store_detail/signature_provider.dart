@@ -23,6 +23,6 @@ class SignaturePadNotifier extends StateNotifier<ui.Image?> {
 
 // 서명 상태를 관리하는 Provider
 final signaturePadProvider =
-StateNotifierProvider<SignaturePadNotifier, ui.Image?>(
+StateNotifierProvider.autoDispose<SignaturePadNotifier, ui.Image?>(
       (ref) => SignaturePadNotifier(GlobalKey<SfSignaturePadState>()),
 );

@@ -1,13 +1,14 @@
+import 'package:carrinton_app/presentation/view_models/home/store_detail/signature_provider.dart';
 import 'package:carrinton_app/theme/colors.dart';
 import 'package:carrinton_app/theme/text_style.dart';
-import 'package:carrinton_app/provider/home/store_detail/signature_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:syncfusion_flutter_signaturepad/signaturepad.dart';
 import 'dart:ui' as ui;
 
 class Signature extends ConsumerWidget {
-  const Signature({super.key});
+  final String description;
+  const Signature({super.key, required this.description});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -48,7 +49,7 @@ class Signature extends ConsumerWidget {
                         style: CustomStyle.appBarTitle(),
                       ),
                       content: AspectRatio(
-                        aspectRatio: 4 / 3,
+                        aspectRatio: 5 / 3,
                         child: Container(
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
@@ -129,7 +130,7 @@ class Signature extends ConsumerWidget {
               child: SizedBox(
                 width: MediaQuery.of(context).size.width * 0.55,
                 child: AspectRatio(
-                  aspectRatio: 4 / 3,
+                  aspectRatio: 5 / 3,
                   child: Container(
                       decoration: BoxDecoration(
                         color: Colors.white,
@@ -143,10 +144,14 @@ class Signature extends ConsumerWidget {
                 ),
               ),
             ),
-            Text(
-              'After checking\nPlease sign the PO.',
-              textAlign: TextAlign.end,
-              style: CustomStyle.bodySmall(),
+            Flexible(
+              child: Text(
+                description,
+                textAlign: TextAlign.end,
+                style: CustomStyle.bodySmall(),
+                softWrap: true,
+                overflow: TextOverflow.visible, // 텍스트가 넘칠 경우 처리 방식
+              ),
             )
           ],
         ),

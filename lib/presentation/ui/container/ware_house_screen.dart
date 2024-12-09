@@ -1,5 +1,7 @@
-
+import 'package:carrinton_app/presentation/ui/home/store_detail_screen/widgets/signature.dart';
 import 'package:carrinton_app/presentation/ui/login/widget.dart';
+import 'package:carrinton_app/theme/colors.dart';
+import 'package:carrinton_app/theme/text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -27,16 +29,20 @@ class _WarehouseScreenState extends State<WarehouseScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Image.asset('assets/images/sample_store_image.png'),
-                  const SizedBox(
-                    width: 8,
-                  ),
+                  const SizedBox(width: 16),
                   Expanded(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text('CARRINGTON #1'),
-                        const Text('Warehouse'),
+                        Text(
+                          'CARRINGTON #1',
+                          style: CustomStyle.headMedium(color: mainColor),
+                        ),
+                        Text(
+                          'Warehouse',
+                          style: CustomStyle.bodySmall(color: mainColor),
+                        ),
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.start, // 상단 정렬
                           children: [
@@ -69,11 +75,41 @@ class _WarehouseScreenState extends State<WarehouseScreen> {
                   )
                 ],
               ),
-              const SizedBox(height: 16,),
-              LargeButton(buttonText: 'WAREHOUSE UNLOADING', onPressed: () {})
             ],
           ),
-        )
+        ),
+        const SizedBox(height: 16),
+        Flex(
+          direction: Axis.horizontal,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Flexible(
+                flex: 1,
+                child: Text(
+                  'Weight(kg)',
+                  style: CustomStyle.headMedium(),
+                )),
+            Flexible(
+              flex: 2,
+              child: Container(
+                width: double.infinity,
+                padding: const EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10)),
+                child: Text(
+                  '25',
+                  textAlign: TextAlign.end,
+                  style: CustomStyle.headMedium(),
+                ),
+              ),
+            )
+          ],
+        ),
+        const SizedBox(height: 16),
+        Signature(description: 'Please sign'),
+        const SizedBox(height: 16),
+        LargeButton(buttonText: 'WAREHOUSE UNLOADING', onPressed: () {}),
       ],
     );
   }

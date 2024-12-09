@@ -2,7 +2,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // ProgressNotifier: 상태를 관리하는 클래스
 class ProgressNotifier extends StateNotifier<double> {
-  ProgressNotifier() : super(34); // 초기값 설정
+  ProgressNotifier() : super(66); // 초기값 설정
 
   // 상태 업데이트 메서드
   void updateProgress(double newProgress) {
