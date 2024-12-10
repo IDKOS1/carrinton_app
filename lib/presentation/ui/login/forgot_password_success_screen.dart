@@ -1,5 +1,5 @@
+import 'package:carrinton_app/presentation/theme/colors.dart';
 import 'package:carrinton_app/presentation/ui/login/widget.dart';
-import 'package:carrinton_app/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 

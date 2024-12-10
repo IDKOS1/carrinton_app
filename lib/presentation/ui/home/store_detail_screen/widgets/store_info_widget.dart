@@ -1,6 +1,6 @@
 import 'package:carrinton_app/models/store_info_model.dart';
-import 'package:carrinton_app/theme/colors.dart';
-import 'package:carrinton_app/theme/text_style.dart';
+import 'package:carrinton_app/presentation/theme/colors.dart';
+import 'package:carrinton_app/presentation/theme/text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -107,7 +107,7 @@ class StoreInfoWidget extends StatelessWidget {
                     height: 8,
                   ),
                   Text(
-                    'Price : 100MYR',
+                    'Price : ${storeInfo.price}MYR',
                     textAlign: TextAlign.center,
                     style: CustomStyle.bodySmall(),
                   ),

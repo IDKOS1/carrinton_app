@@ -1,8 +1,8 @@
 import 'package:carrinton_app/models/models/collect_info_model.dart';
+import 'package:carrinton_app/presentation/theme/colors.dart';
+import 'package:carrinton_app/presentation/theme/text_style.dart';
 import 'package:carrinton_app/presentation/view_models/base/nav_enum_model.dart';
 import 'package:carrinton_app/presentation/view_models/base/circle_progress_provider.dart';
-import 'package:carrinton_app/theme/colors.dart';
-import 'package:carrinton_app/theme/text_style.dart';
 import 'package:dashed_circular_progress_bar/dashed_circular_progress_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -77,7 +77,7 @@ class CollectStatusBar extends StatelessWidget {
               child: Column(
                 children: [
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
@@ -91,7 +91,7 @@ class CollectStatusBar extends StatelessWidget {
                     ],
                   ),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text('${collectInfo.moveDistance}',
@@ -203,7 +203,8 @@ class CollectInfoContent extends StatelessWidget {
           Text(
             title,
             style: const TextStyle(
-                color: Color(0xFF4C4B4B), fontWeight: FontWeight.w700),
+                color: Color(0xFF4C4B4B), fontWeight: FontWeight.w700,
+            fontSize: 14),
           )
         ],
       ),

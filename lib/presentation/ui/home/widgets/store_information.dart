@@ -1,5 +1,5 @@
 import 'package:carrinton_app/models/store_info_model.dart';
-import 'package:carrinton_app/theme/colors.dart';
+import 'package:carrinton_app/presentation/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -28,9 +28,7 @@ class StoreInformation extends StatelessWidget {
                 width: 100,
                 height: 100,
               ),
-              SizedBox(
-                width: 16,
-              ),
+              SizedBox(width: 16),
               Expanded(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -45,9 +43,7 @@ class StoreInformation extends StatelessWidget {
                         fontWeight: FontWeight.w700,
                       ),
                     ),
-                    SizedBox(
-                      height: 8,
-                    ),
+                    SizedBox(height: 8),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [

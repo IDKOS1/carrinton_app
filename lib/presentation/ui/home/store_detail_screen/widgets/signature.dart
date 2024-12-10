@@ -1,6 +1,6 @@
-import 'package:carrinton_app/presentation/view_models/home/store_detail/signature_provider.dart';
-import 'package:carrinton_app/theme/colors.dart';
-import 'package:carrinton_app/theme/text_style.dart';
+import 'package:carrinton_app/presentation/theme/colors.dart';
+import 'package:carrinton_app/presentation/theme/text_style.dart';
+import 'package:carrinton_app/presentation/view_models/home/store_detail/state/signature_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:syncfusion_flutter_signaturepad/signaturepad.dart';

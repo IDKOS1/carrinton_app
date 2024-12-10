@@ -1,9 +1,9 @@
-import 'package:carrinton_app/models/flex_button.dart';
+import 'package:carrinton_app/presentation/model/flex_button.dart';
 import 'package:carrinton_app/presentation/ui/base/widgets/row_button.dart';
 import 'package:carrinton_app/presentation/ui/home/store_detail_screen/store_detail_screen.dart';
 import 'package:carrinton_app/presentation/ui/home/widgets/store_information.dart';
 import 'package:carrinton_app/presentation/view_models/base/selected_index.dart';
-import 'package:carrinton_app/service/MockStoreInfo.dart';
+import 'package:carrinton_app/data/datasources/local/MockStoreInfo.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -53,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       context,
                       MaterialPageRoute(
                           builder: (context) =>
-                              StoreDetailScreen(storeInfo: storeInfo)));
+                              StoreDetailScreen(storeId: storeInfo.storeId)));
                 },
               );
             },

@@ -1,7 +1,9 @@
-import 'package:carrinton_app/theme/colors.dart';
-import 'package:carrinton_app/theme/text_style.dart';
+import 'package:carrinton_app/presentation/theme/colors.dart';
+import 'package:carrinton_app/presentation/theme/text_style.dart';
+import 'package:carrinton_app/presentation/view_models/home/store_detail/state/jerry_can_list_notifier.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class NewJerryCanList extends StatelessWidget {
   final List<String> canList;
@@ -25,12 +27,12 @@ class NewJerryCanList extends StatelessWidget {
   }
 }
 
-class NewJerryCan extends StatelessWidget {
+class NewJerryCan extends ConsumerWidget {
   final String canNumber;
   const NewJerryCan({super.key, required this.canNumber});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
@@ -45,10 +47,14 @@ class NewJerryCan extends StatelessWidget {
             canNumber,
             style: CustomStyle.headMedium(color: orange),
           ),
-          SizedBox(width: 2,),
+          SizedBox(
+            width: 2,
+          ),
           GestureDetector(
+            onTap: () {
+              ref.read(jerryCanListProvider.notifier).removeCan(canNumber);
+            },
             child: SvgPicture.asset('assets/images/icon_delete.svg'),
-            onTap: () {},
           )
         ],
       ),

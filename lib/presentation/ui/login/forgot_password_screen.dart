@@ -1,5 +1,5 @@
+import 'package:carrinton_app/presentation/theme/colors.dart';
 import 'package:carrinton_app/presentation/ui/login/widget.dart';
-import 'package:carrinton_app/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -70,9 +70,7 @@ class ForgotPassword extends StatelessWidget {
                       height: 18,
                     ),
                     CustomTextField(isPassword: false),
-                    SizedBox(
-                      height: 30,
-                    ),
+                    SizedBox(height: 30),
                     LargeButton(
                         buttonText: 'RESET PASSWORD',
                         onPressed: () {
@@ -82,9 +80,7 @@ class ForgotPassword extends StatelessWidget {
                                   builder: (context) =>
                                       const ForgotPasswordSuccess()));
                         }),
-                    SizedBox(
-                      height: 10,
-                    ),
+                    SizedBox(height: 10),
                     LargeButton(
                         buttonText: 'BACK TO LOGIN',
                         backgroundColor: lightGray,

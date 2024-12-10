@@ -1,5 +1,5 @@
-import 'package:carrinton_app/theme/colors.dart';
-import 'package:carrinton_app/theme/text_style.dart';
+import 'package:carrinton_app/presentation/theme/colors.dart';
+import 'package:carrinton_app/presentation/theme/text_style.dart';
 import 'package:flutter/material.dart';
 
 class JerryCanList extends StatelessWidget {
