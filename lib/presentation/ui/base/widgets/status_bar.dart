@@ -1,15 +1,15 @@
-import 'package:carrinton_app/models/models/collect_info_model.dart';
+import 'package:carrinton_app/domain/entity/collect_info/collect_info_entity.dart';
 import 'package:carrinton_app/presentation/theme/colors.dart';
 import 'package:carrinton_app/presentation/theme/text_style.dart';
-import 'package:carrinton_app/presentation/view_models/base/nav_enum_model.dart';
-import 'package:carrinton_app/presentation/view_models/base/circle_progress_provider.dart';
-import 'package:dashed_circular_progress_bar/dashed_circular_progress_bar.dart';
+import 'package:carrinton_app/presentation/ui/base/provider/nav_enum_model.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import 'circle_progress_bar.dart';
+import 'collect_info_content.dart';
 
 class CollectStatusBar extends StatelessWidget {
   final Nav page;
-  final CollectInfo collectInfo;
+  final CollectInfoEntity collectInfo;
 
   const CollectStatusBar(
       {required this.page, required this.collectInfo, super.key});
@@ -17,8 +17,9 @@ class CollectStatusBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget info;
+    // 삼항연산자
     if (page == Nav.home) {
-      info = Container(
+      info = SizedBox(
         key: const ValueKey('home'),
         width: double.infinity,
         child: Wrap(
@@ -29,14 +30,14 @@ class CollectStatusBar extends StatelessWidget {
             CollectInfoContent(
                 title: 'Collected', content: collectInfo.collected.toString()),
             CollectInfoContent(
-                title: 'Total', content: collectInfo.total.toString()),
+                title: 'Total', content: collectInfo.totalCollect.toString()),
             CollectInfoContent(
                 title: 'Pending', content: collectInfo.pending.toString()),
           ],
         ),
       );
     } else {
-      info = Container(
+      info = SizedBox(
         key: const ValueKey('detail'),
         width: double.infinity,
         child: Wrap(
@@ -44,7 +45,7 @@ class CollectStatusBar extends StatelessWidget {
           alignment: WrapAlignment.spaceBetween,
           crossAxisAlignment: WrapCrossAlignment.center,
           children: [
-            Container(
+            SizedBox(
               width: 70,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -55,7 +56,7 @@ class CollectStatusBar extends StatelessWidget {
                     children: [
                       Text('${collectInfo.collected}',
                           style: CustomStyle.headMedium(color: mainColor)),
-                      Text(' / ${collectInfo.total}',
+                      Text(' / ${collectInfo.totalCollect}',
                           style: const TextStyle(
                               color: Colors.black,
                               fontWeight: FontWeight.w700,
@@ -72,7 +73,7 @@ class CollectStatusBar extends StatelessWidget {
             ),
             CollectInfoContent(
                 title: 'Jerry Can', content: collectInfo.jerryCan.toString()),
-            Container(
+            SizedBox(
               width: 80,
               child: Column(
                 children: [
@@ -122,7 +123,7 @@ class CollectStatusBar extends StatelessWidget {
           child: Container(
             width: 90,
             height: 90,
-            decoration: BoxDecoration(boxShadow: [
+            decoration: const BoxDecoration(boxShadow: [
               BoxShadow(
                 color: shadowColor,
                 spreadRadius: 5,
@@ -148,7 +149,7 @@ class CollectStatusBar extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              SizedBox(
+              const SizedBox(
                 width: 110,
               ),
               Expanded(
@@ -179,74 +180,5 @@ class CollectStatusBar extends StatelessWidget {
         ),
       ],
     );
-  }
-}
-
-class CollectInfoContent extends StatelessWidget {
-  final String title;
-  final String content;
-
-  const CollectInfoContent(
-      {super.key, required this.title, required this.content});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 70,
-      child: Column(
-        children: [
-          Text('$content',
-              style: const TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.w700,
-                  fontSize: 16)),
-          Text(
-            title,
-            style: const TextStyle(
-                color: Color(0xFF4C4B4B), fontWeight: FontWeight.w700,
-            fontSize: 14),
-          )
-        ],
-      ),
-    );
-  }
-}
-
-// 원형 프로그래스바
-class CircleProgressBar extends ConsumerWidget {
-  const CircleProgressBar({super.key});
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final progress = ref.watch(progressNotifierProvider);
-
-    return Container(
-        decoration:
-            const BoxDecoration(color: Colors.white, shape: BoxShape.circle),
-        padding: const EdgeInsets.all(12),
-        width: 90,
-        height: 90,
-        child: DashedCircularProgressBar.aspectRatio(
-          aspectRatio: 1,
-          valueNotifier: ValueNotifier(progress),
-          progress: progress,
-          startAngle: 180,
-          sweepAngle: 360,
-          foregroundColor: const Color(0xFF79B12B),
-          backgroundColor: const Color(0xFFEEEEEE),
-          foregroundStrokeWidth: 10,
-          backgroundStrokeWidth: 7,
-          animation: true,
-          child: Center(
-            child: Text(
-              '${progress.toInt()}%',
-              style: const TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.w900,
-                fontSize: 12,
-              ),
-            ),
-          ),
-        ));
   }
 }

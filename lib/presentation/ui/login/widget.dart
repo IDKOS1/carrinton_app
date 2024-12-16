@@ -74,20 +74,20 @@ class LargeButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: double.infinity,
       height: 50,
       child: ElevatedButton(
           onPressed: onPressed,
-          child: Text(
-            buttonText,
-            style: const TextStyle(fontFamily: 'DMSans', color: Colors.white),
-          ),
           style: ElevatedButton.styleFrom(
               backgroundColor: backgroundColor,
               elevation: 0,
               shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8)))),
+                  borderRadius: BorderRadius.circular(8))),
+          child: Text(
+            buttonText,
+            style: const TextStyle(fontFamily: 'DMSans', color: Colors.white),
+          )),
     );
   }
 }

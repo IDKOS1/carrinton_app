@@ -1,4 +1,5 @@
 
+import 'package:carrinton_app/di/di.dart';
 import 'package:carrinton_app/presentation/ui/login/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -18,6 +19,9 @@ void main() async {
       SystemUiOverlay.bottom,
     ],
   );
+
+  // DI 초기화
+  setupDependencies();
 
   runApp(const ProviderScope(child: MyApp()));
 }

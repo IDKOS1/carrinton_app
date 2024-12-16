@@ -92,3 +92,8 @@ lib/generated_plugin_registrant.dart
 /.idea/modules.xml
 /macos/Podfile.lock
 /.idea/vcs.xml
+
+
+*.freezed.dart
+*.g.dart
+/android/.kotlin/errors/errors-1733912559084.log

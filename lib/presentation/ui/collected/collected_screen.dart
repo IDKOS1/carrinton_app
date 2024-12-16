@@ -1,9 +1,7 @@
-import 'package:carrinton_app/presentation/model/flex_button.dart';
+import 'package:carrinton_app/presentation/model/widget/flex_button.dart';
 import 'package:carrinton_app/presentation/ui/base/widgets/row_button.dart';
-import 'package:carrinton_app/presentation/ui/home/store_detail_screen/store_detail_screen.dart';
-import 'package:carrinton_app/presentation/ui/home/widgets/store_information.dart';
-import 'package:carrinton_app/presentation/view_models/base/selected_index.dart';
-import 'package:carrinton_app/data/datasources/local/MockStoreInfo.dart';
+import 'package:carrinton_app/presentation/ui/base/provider/selected_index.dart';
+// import 'package:carrinton_app/data/datasources/local/MockPoInfo.dart';
 import 'package:flutter/material.dart';
 
 class CollectedScreen extends StatefulWidget {
@@ -32,24 +30,24 @@ class _CollectedScreenState extends State<CollectedScreen> {
           ],
         ),
         const SizedBox(height: 16),
-        Expanded(
-          child: ListView.builder(
-            itemCount: MockStoreInfo.storeList.length,
-            itemBuilder: (context, index) {
-              final storeInfo = MockStoreInfo.storeList[index];
-              return StoreInformation(
-                storeInfo: storeInfo,
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              StoreDetailScreen(storeId: storeInfo.storeId,)));
-                },
-              );
-            },
-          ),
-        ),
+        // Expanded(
+        //   child: ListView.builder(
+        //     itemCount: MockPoInfo.PoList.length,
+        //     itemBuilder: (context, index) {
+        //       final PoInfo = MockPoInfo.PoList[index];
+        //       return PoInformation(
+        //         PoInfo: PoInfo,
+        //         onPressed: () {
+        //           Navigator.push(
+        //               context,
+        //               MaterialPageRoute(
+        //                   builder: (context) =>
+        //                       PoDetailScreen(PoId: PoInfo.PoId,)));
+        //         },
+        //       );
+        //     },
+        //   ),
+        // ),
       ],
     );
   }

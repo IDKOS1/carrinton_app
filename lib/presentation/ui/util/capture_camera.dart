@@ -7,15 +7,15 @@ import 'package:image_picker/image_picker.dart';
 
 class CaptureCamera extends ConsumerWidget {
   final String imageName;
-  final XFile? imageProvider;
+  final XFile? image;
   final Function(XFile) onImagePicked;
 
   const CaptureCamera({
-    Key? key,
+    super.key,
     required this.imageName,
-    required this.imageProvider,
+    required this.image,
     required this.onImagePicked,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -41,17 +41,17 @@ class CaptureCamera extends ConsumerWidget {
                 ),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(10),
-                  child: imageProvider == null
+                  child: image == null
                       ? Container(
                     color: lightGray,
-                    child: Icon(
+                    child: const Icon(
                       Icons.camera_alt_outlined,
                       size: 48,
                       color: middleGray,
                     ),
                   )
                       : Image.file(
-                    File(imageProvider?.path ?? ''),
+                    File(image?.path ?? ''),
                     fit: BoxFit.cover,
                   ),
                 ),
