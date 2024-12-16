@@ -1,27 +1,27 @@
-class StoreDetailInfo {
-  final int storeId;
+class PoDetailInfo {
+  final int PoId;
   final String title;
   final String location;
   final String number;
   final double price;
   final DateTime lastVisit; // Non-nullable 유지
   final List<String> ownCan;
-  final String storeImage;
+  final String PoImage;
 
-  StoreDetailInfo._({
-    required this.storeId,
+  PoDetailInfo._({
+    required this.PoId,
     required this.title,
     required this.location,
     required this.number,
     required this.price,
     required this.lastVisit, // 기본값 보장
     required this.ownCan,
-    required this.storeImage,
+    required this.PoImage,
   });
 
-  factory StoreDetailInfo.fromJson(Map<String, dynamic> json) {
-    return StoreDetailInfo._(
-      storeId: json['storeId'] as int? ?? 0,
+  factory PoDetailInfo.fromJson(Map<String, dynamic> json) {
+    return PoDetailInfo._(
+      PoId: json['PoId'] as int? ?? 0,
       title: json['title'] as String? ?? 'NO DATA',
       location: json['location'] as String? ?? 'Unknown',
       number: json['number'] as String? ?? 'No Number',
@@ -30,7 +30,7 @@ class StoreDetailInfo {
           ? DateTime.parse(json['lastVisit'] as String)
           : DateTime(0000, 0, 0), // 기본값 설정
       ownCan: (json['ownCan'] as List<dynamic>?)?.cast<String>() ?? [],
-      storeImage: json['storeImage'] as String? ?? '',
+      PoImage: json['PoImage'] as String? ?? '',
     );
   }
 }

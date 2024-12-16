@@ -1,4 +1,4 @@
-import 'package:carrinton_app/presentation/model/flex_button.dart';
+import 'package:carrinton_app/presentation/model/widget/flex_button.dart';
 import 'package:carrinton_app/presentation/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

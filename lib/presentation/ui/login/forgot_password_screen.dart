@@ -47,7 +47,7 @@ class ForgotPassword extends StatelessWidget {
                     ),
                     Center(
                       child: Padding(
-                        padding: EdgeInsets.symmetric(vertical: 46),
+                        padding: const EdgeInsets.symmetric(vertical: 46),
                         child: SvgPicture.asset(
                           'assets/images/forgot_password.svg',
                           width: 118,
@@ -69,8 +69,8 @@ class ForgotPassword extends StatelessWidget {
                     const SizedBox(
                       height: 18,
                     ),
-                    CustomTextField(isPassword: false),
-                    SizedBox(height: 30),
+                    const CustomTextField(isPassword: false),
+                    const SizedBox(height: 30),
                     LargeButton(
                         buttonText: 'RESET PASSWORD',
                         onPressed: () {
@@ -80,7 +80,7 @@ class ForgotPassword extends StatelessWidget {
                                   builder: (context) =>
                                       const ForgotPasswordSuccess()));
                         }),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     LargeButton(
                         buttonText: 'BACK TO LOGIN',
                         backgroundColor: lightGray,

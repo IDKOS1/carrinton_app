@@ -16,7 +16,9 @@ Future<void> main() async {
   // 앱을 실행합니다. MaterialApp을 사용하여 앱의 루트 위젯을 정의합니다.
   runApp(MaterialApp(
     theme: ThemeData.dark(), // 앱의 전반적인 테마를 다크 테마로 설정합니다.
-    home: TakePictureScreen(camera: firstCamera), // 홈 스크린으로 TakePictureScreen을 설정하고, 선택된 카메라를 전달합니다.
+    home: TakePictureScreen(
+        camera:
+            firstCamera), // 홈 스크린으로 TakePictureScreen을 설정하고, 선택된 카메라를 전달합니다.
   ));
 }
 
@@ -25,7 +27,7 @@ class TakePictureScreen extends StatefulWidget {
   final CameraDescription camera;
 
   // 생성자를 통해 카메라 객체를 전달받습니다. 필수로 전달받아야 하므로 @required로 표시합니다.
-  const TakePictureScreen({Key? key, required this.camera}) : super(key: key);
+  const TakePictureScreen({super.key, required this.camera});
 
   @override
   _TakePictureScreenState createState() => _TakePictureScreenState();
@@ -58,7 +60,7 @@ class _TakePictureScreenState extends State<TakePictureScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('카메라 예제')), // 앱바 제목 설정
+      appBar: AppBar(title: const Text('카메라 예제')), // 앱바 제목 설정
       // 비동기 작업을 다루기 위해 FutureBuilder를 사용합니다.
       body: FutureBuilder<void>(
         future: _initializeControllerFuture,
@@ -68,12 +70,12 @@ class _TakePictureScreenState extends State<TakePictureScreen> {
             return CameraPreview(_controller); // 카메라 미리보기 위젯
           } else {
             // 아직 로딩 중이라면 로딩 인디케이터를 보여줍니다.
-            return Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
           }
         },
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.camera_alt),
+        child: const Icon(Icons.camera_alt),
         // 버튼이 눌리면 사진을 캡처하는 기능을 수행합니다.
         onPressed: () async {
           try {
@@ -87,7 +89,8 @@ class _TakePictureScreenState extends State<TakePictureScreen> {
             if (!mounted) return;
             await Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (context) => DisplayPictureScreen(imagePath: image.path),
+                builder: (context) =>
+                    DisplayPictureScreen(imagePath: image.path),
               ),
             );
           } catch (e) {
@@ -102,11 +105,11 @@ class _TakePictureScreenState extends State<TakePictureScreen> {
 class DisplayPictureScreen extends StatelessWidget {
   final String imagePath;
   // 생성자를 통해 이미지 경로를 전달받습니다.
-  const DisplayPictureScreen({Key? key, required this.imagePath}) : super(key: key);
+  const DisplayPictureScreen({super.key, required this.imagePath});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('사진 보기')), // 앱바 제목 설정
+      appBar: AppBar(title: const Text('사진 보기')), // 앱바 제목 설정
       // 파일 시스템에서 이미지를 로드하여 화면에 표시합니다.
       body: Image.file(File(imagePath)),
     );

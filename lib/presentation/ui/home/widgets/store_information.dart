@@ -1,14 +1,15 @@
-import 'package:carrinton_app/models/store_info_model.dart';
+import 'package:carrinton_app/domain/entity/po/po_list_entity.dart';
 import 'package:carrinton_app/presentation/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class StoreInformation extends StatelessWidget {
-  final StoreInfo storeInfo;
+class PoInformation extends StatelessWidget {
+  // final PoInfo PoInfo;
   final VoidCallback onPressed;
+  final PoEntity PoInfo;
 
-  const StoreInformation(
-      {super.key, required this.storeInfo, required this.onPressed});
+  const PoInformation(
+      {super.key, required this.PoInfo, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -17,33 +18,33 @@ class StoreInformation extends StatelessWidget {
       child: GestureDetector(
         onTap: onPressed,
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 12),
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 12),
           decoration: BoxDecoration(
               color: Colors.white, borderRadius: BorderRadius.circular(6)),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Image.asset(
-                storeInfo.storeImage,
+                PoInfo.PoImage,
                 width: 100,
                 height: 100,
               ),
-              SizedBox(width: 16),
+              const SizedBox(width: 16),
               Expanded(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      storeInfo.title,
-                      style: TextStyle(
+                      PoInfo.title,
+                      style: const TextStyle(
                         color: mainColor,
                         fontSize: 16,
                         fontFamily: 'DM Sans',
                         fontWeight: FontWeight.w700,
                       ),
                     ),
-                    SizedBox(height: 8),
+                    const SizedBox(height: 8),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -58,8 +59,8 @@ class StoreInformation extends StatelessWidget {
                         const SizedBox(width: 4),
                         Expanded(
                           child: Text(
-                            storeInfo.location,
-                            style: TextStyle(
+                            PoInfo.location,
+                            style: const TextStyle(
                               color: Colors.black,
                               fontSize: 12,
                               fontFamily: 'DM Sans',
@@ -83,8 +84,8 @@ class StoreInformation extends StatelessWidget {
                         ),
                         Expanded(
                           child: Text(
-                            storeInfo.number,
-                            style: TextStyle(
+                            PoInfo.number,
+                            style: const TextStyle(
                               color: Colors.black,
                               fontSize: 12,
                               fontFamily: 'DM Sans',
@@ -96,23 +97,23 @@ class StoreInformation extends StatelessWidget {
                         ),
                       ],
                     ),
-                    Container(
+                    SizedBox(
                       width: double.infinity,
                       child: Wrap(
                         alignment: WrapAlignment.spaceBetween,
                         crossAxisAlignment: WrapCrossAlignment.center,
                         children: [
                           Text(
-                            storeInfo.operatingTime,
-                            style: TextStyle(
+                            PoInfo.operatingTime,
+                            style: const TextStyle(
                               color: Color(0xFF232C3A),
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
                             ),
                           ),
                           Text(
-                            '${storeInfo.distance} km',
-                            style: TextStyle(
+                            '${PoInfo.distance} km',
+                            style: const TextStyle(
                               color: Color(0xFFA9A5B8),
                               fontSize: 14,
                               fontFamily: 'DM Sans',

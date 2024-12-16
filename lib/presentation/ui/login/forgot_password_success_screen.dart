@@ -41,7 +41,7 @@ class ForgotPasswordSuccess extends StatelessWidget {
               ),
               Center(
                 child: Padding(
-                  padding: EdgeInsets.fromLTRB(0, 40, 0, 70),
+                  padding: const EdgeInsets.fromLTRB(0, 40, 0, 70),
                   child: SvgPicture.asset(
                     'assets/images/forgot_password_success.svg',
                     width: 118,

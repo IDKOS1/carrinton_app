@@ -1,6 +1,6 @@
 import 'package:carrinton_app/presentation/theme/colors.dart';
 import 'package:carrinton_app/presentation/theme/text_style.dart';
-import 'package:carrinton_app/presentation/ui/home/store_detail_screen/widgets/signature.dart';
+import 'package:carrinton_app/presentation/ui/home/Po_detail_screen/widgets/signature.dart';
 import 'package:carrinton_app/presentation/ui/login/widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -29,7 +29,7 @@ class _WarehouseScreenState extends State<WarehouseScreen> {
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Image.asset('assets/images/sample_store_image.png'),
+                    Image.asset('assets/images/sample_Po_image.png'),
                     const SizedBox(width: 16),
                     Expanded(
                       child: Column(
@@ -45,7 +45,8 @@ class _WarehouseScreenState extends State<WarehouseScreen> {
                             style: CustomStyle.bodySmall(color: mainColor),
                           ),
                           Row(
-                            crossAxisAlignment: CrossAxisAlignment.start, // 상단 정렬
+                            crossAxisAlignment:
+                                CrossAxisAlignment.start, // 상단 정렬
                             children: [
                               Padding(
                                 padding: const EdgeInsets.all(2.0),
@@ -108,7 +109,7 @@ class _WarehouseScreenState extends State<WarehouseScreen> {
             ],
           ),
           const SizedBox(height: 16),
-          Signature(description: 'After checking\nPlease sign the PO.'),
+          const Signature(description: 'After checking\nPlease sign the PO.'),
           const SizedBox(height: 16),
           LargeButton(buttonText: 'WAREHOUSE UNLOADING', onPressed: () {}),
           const SizedBox(height: 16)

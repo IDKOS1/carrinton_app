@@ -1,33 +1,35 @@
-import 'package:carrinton_app/domain/entities/collect_info.dart';
+// data/models/collect_info_model.dart
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:carrinton_app/domain/entity/collect_info/collect_info_entity.dart';
 
-class CollectInfoModel extends CollectInfo {
-  CollectInfoModel({
-    required super.total,
-    required super.collected,
-    required super.pending,
-    required super.jerryCan,
-    required super.canWeight,
-    required super.moveDistance,
-  });
+part 'collect_info_model.freezed.dart';
+part 'collect_info_model.g.dart';
+
+@freezed
+class CollectInfoModel with _$CollectInfoModel {
+  const factory CollectInfoModel({
+    required int totalCollect,
+    required int collected,
+    required int pending,
+    required int jerryCan,
+    required double canWeight,
+    required double moveDistance,
+  }) = _CollectInfoModel;
 
   factory CollectInfoModel.fromJson(Map<String, dynamic> json) =>
-      CollectInfoModel(
-        total: json['total'] as int? ?? 0,
-        collected: json['collected'] as int? ?? 0,
-        pending: json['pending'] as int? ?? 0,
-        jerryCan: json['jerryCan'] as int? ?? 0,
-        canWeight: (json['canWeight'] as num?)?.toDouble() ?? 0.0,
-        moveDistance: (json['moveDistance'] as num?)?.toDouble() ?? 0.0,
-      );
+      _$CollectInfoModelFromJson(json);
+}
 
-  Map<String, dynamic> toJson() {
-    return {
-      'total': total,
-      'collected': collected,
-      'pending': pending,
-      'jerryCan': jerryCan,
-      'canWeight': canWeight,
-      'moveDistance': moveDistance,
-    };
+// extension을 통해 toEntity 구현
+extension CollectInfoModelX on CollectInfoModel {
+  CollectInfoEntity toEntity() {
+    return CollectInfoEntity(
+      totalCollect: totalCollect,
+      collected: collected,
+      pending: pending,
+      jerryCan: jerryCan,
+      canWeight: canWeight,
+      moveDistance: moveDistance,
+    );
   }
 }
