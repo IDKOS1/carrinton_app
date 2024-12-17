@@ -7,12 +7,15 @@ import 'package:carrinton_app/presentation/ui/home/provider/po_list_provider.dar
 import 'package:carrinton_app/presentation/ui/home/widgets/store_information.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:logger/logger.dart';
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    var logger = Logger();
+    logger.d('HomeScreen 진입');
     final poListAsync = ref.watch(poListViewModelProvider);
 
     final poListInfo = poListAsync.when(
@@ -48,21 +51,23 @@ class HomeScreen extends ConsumerWidget {
         const SizedBox(height: 16),
         Expanded(
           child: poListInfo == null
-              ? const CircularProgressIndicator(
-                  color: mainColor,
-                )
+              ? const Center(
+                child: CircularProgressIndicator(
+                    color: mainColor,
+                  ),
+              )
               : ListView.builder(
-                  itemCount: poListInfo.PoList.length,
+                  itemCount: poListInfo.poList.length,
                   itemBuilder: (context, index) {
-                    final PoInfo = poListInfo.PoList[index];
+                    final poInfo = poListInfo.poList[index];
                     return PoInformation(
-                      PoInfo: PoInfo,
+                      poInfo: poInfo,
                       onPressed: () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
                                 builder: (context) =>
-                                    PoDetailScreen(PoId: PoInfo.PoId)));
+                                    PoDetailScreen(PoId: poInfo.poId)));
                       },
                     );
                   },
