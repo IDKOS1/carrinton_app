@@ -97,3 +97,4 @@ lib/generated_plugin_registrant.dart
 *.freezed.dart
 *.g.dart
 /android/.kotlin/errors/errors-1733912559084.log
+/.idea/inspectionProfiles/Project_Default.xml
