@@ -20,7 +20,7 @@ class ForgotPasswordSuccess extends StatelessWidget {
               const Text(
                 'Successfully',
                 style: TextStyle(
-                    color: navy,
+                    color: AppColors.navy,
                     fontSize: 30,
                     fontFamily: 'DMSans',
                     fontWeight: FontWeight.w700),
@@ -32,7 +32,7 @@ class ForgotPasswordSuccess extends StatelessWidget {
                 'We have sent you a password reset SMS. Please follow\n'
                 'the instructions in the email to reset your password.',
                 style: TextStyle(
-                  color: navy,
+                  color: AppColors.navy,
                   fontSize: 12,
                   fontWeight: FontWeight.w400,
                   fontFamily: 'DMSans',

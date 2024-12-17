@@ -27,7 +27,7 @@ class ForgotPassword extends StatelessWidget {
                     const Text(
                       'Forgot Password?',
                       style: TextStyle(
-                          color: navy,
+                          color: AppColors.navy,
                           fontSize: 30,
                           fontFamily: 'DMSans',
                           fontWeight: FontWeight.w700),
@@ -38,7 +38,7 @@ class ForgotPassword extends StatelessWidget {
                     const Text(
                       'To reset your password, you need your email\nthat can be authenticated',
                       style: TextStyle(
-                        color: navy,
+                        color: AppColors.navy,
                         fontSize: 12,
                         fontWeight: FontWeight.w400,
                         fontFamily: 'DMSans',
@@ -61,7 +61,7 @@ class ForgotPassword extends StatelessWidget {
                         'Phone',
                         style: TextStyle(
                           fontFamily: 'DMSans',
-                          color: mainColor,
+                          color: AppColors.mainColor,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
@@ -83,7 +83,7 @@ class ForgotPassword extends StatelessWidget {
                     const SizedBox(height: 10),
                     LargeButton(
                         buttonText: 'BACK TO LOGIN',
-                        backgroundColor: lightGray,
+                        backgroundColor: AppColors.lightGray,
                         onPressed: () {
                           Navigator.pop(context);
                         })

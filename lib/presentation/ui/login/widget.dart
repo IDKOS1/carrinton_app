@@ -66,7 +66,7 @@ class LargeButton extends StatelessWidget {
       {super.key,
       required this.buttonText,
       required this.onPressed,
-      this.backgroundColor = mainColor});
+      this.backgroundColor = AppColors.mainColor});
 
   final String buttonText;
   final VoidCallback onPressed;

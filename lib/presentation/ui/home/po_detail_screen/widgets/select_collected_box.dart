@@ -26,18 +26,18 @@ class SelectCollectBox extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               border: Border.all(
-                  color: selectCollect ? Colors.transparent : middleGray),
+                  color: selectCollect ? Colors.transparent : AppColors.middleGray),
               color: selectCollect
                   ? isCollectBox
-                      ? mainColor
-                      : waringColor
+                      ? AppColors.mainColor
+                      : AppColors.waringColor
                   : Colors.white,
             ),
             padding: const EdgeInsets.symmetric(vertical: 10),
             alignment: Alignment.center,
             child: Text(text,
                 style: CustomStyle.headMedium(
-                    color: selectCollect ? Colors.white : middleGray)),
+                    color: selectCollect ? Colors.white : AppColors.middleGray)),
           )),
     );
   }

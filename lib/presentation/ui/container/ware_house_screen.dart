@@ -38,11 +38,11 @@ class _WarehouseScreenState extends State<WarehouseScreen> {
                         children: [
                           Text(
                             'CARRINGTON #1',
-                            style: CustomStyle.headMedium(color: mainColor),
+                            style: CustomStyle.headMedium(color: AppColors.mainColor),
                           ),
                           Text(
                             'Warehouse',
-                            style: CustomStyle.bodySmall(color: mainColor),
+                            style: CustomStyle.bodySmall(color: AppColors.mainColor),
                           ),
                           Row(
                             crossAxisAlignment:

@@ -34,7 +34,7 @@ class PoDetailScreen extends ConsumerWidget {
         appBar: AppBar(
           centerTitle: true,
           title:
-              Text('TITLE', style: CustomStyle.appBarTitle(color: mainColor)),
+              Text('TITLE', style: CustomStyle.appBarTitle(color: AppColors.mainColor)),
         ),
         body: const Center(child: CircularProgressIndicator()),
       );
@@ -43,9 +43,9 @@ class PoDetailScreen extends ConsumerWidget {
         appBar: AppBar(
           centerTitle: true,
           title:
-              Text('TITLE', style: CustomStyle.appBarTitle(color: mainColor)),
+              Text('TITLE', style: CustomStyle.appBarTitle(color: AppColors.mainColor)),
           leading: IconButton(
-            icon: const Icon(Icons.arrow_back, color: mainColor, size: 24),
+            icon: const Icon(Icons.arrow_back, color: AppColors.mainColor, size: 24),
             onPressed: () => Navigator.pop(context),
           ),
         ),
@@ -150,7 +150,7 @@ class PoDetailScreen extends ConsumerWidget {
                       width: 287,
                       height: 50,
                       decoration: ShapeDecoration(
-                        color: mainColor,
+                        color: AppColors.mainColor,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(6)),
                       ),

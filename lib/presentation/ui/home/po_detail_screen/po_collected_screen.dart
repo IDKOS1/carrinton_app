@@ -74,7 +74,7 @@ class _PoCollectedScreenState extends ConsumerState<PoCollectedScreen> {
                 Row(
                   children: [
                     Text('${widget.price * 25} MYR',
-                        style: CustomStyle.headMedium(color: mainColor)),
+                        style: CustomStyle.headMedium(color: AppColors.mainColor)),
                   ],
                 ),
               ],
@@ -113,7 +113,7 @@ class _PoCollectedScreenState extends ConsumerState<PoCollectedScreen> {
                     },
                     child: Container(
                       decoration: BoxDecoration(
-                        color: mainColor,
+                        color: AppColors.mainColor,
                         borderRadius: BorderRadius.circular(10.0),
                       ),
                       padding: const EdgeInsets.symmetric(

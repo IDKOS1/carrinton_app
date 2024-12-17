@@ -55,7 +55,7 @@ class CollectStatusBar extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text('${collectInfo.collected}',
-                          style: CustomStyle.headMedium(color: mainColor)),
+                          style: CustomStyle.headMedium(color: AppColors.mainColor)),
                       Text(' / ${collectInfo.totalCollect}',
                           style: const TextStyle(
                               color: Colors.black,
@@ -125,7 +125,7 @@ class CollectStatusBar extends StatelessWidget {
             height: 90,
             decoration: const BoxDecoration(boxShadow: [
               BoxShadow(
-                color: shadowColor,
+                color: AppColors.shadowColor,
                 spreadRadius: 5,
                 blurRadius: 20,
               )
@@ -140,7 +140,7 @@ class CollectStatusBar extends StatelessWidget {
             borderRadius: BorderRadius.circular(8),
             boxShadow: const [
               BoxShadow(
-                color: shadowColor,
+                color: AppColors.shadowColor,
                 spreadRadius: 5,
                 blurRadius: 20,
               ),

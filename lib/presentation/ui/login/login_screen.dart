@@ -33,7 +33,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   const Text(
                     'Login',
                     style: TextStyle(
-                        color: navy,
+                        color: AppColors.navy,
                         fontSize: 30,
                         fontFamily: 'DMSans',
                         fontWeight: FontWeight.w700),
@@ -46,7 +46,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     'If you don\'t have an account, contact your office\n'
                     'administrator to get started.',
                     style: TextStyle(
-                      color: navy,
+                      color: AppColors.navy,
                       fontSize: 12,
                       fontWeight: FontWeight.w400,
                       fontFamily: 'DMSans',
@@ -62,7 +62,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       'Phone',
                       style: TextStyle(
                         fontFamily: 'DMSans',
-                        color: mainColor,
+                        color: AppColors.mainColor,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -77,7 +77,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       'PIN',
                       style: TextStyle(
                         fontFamily: 'DMSans',
-                        color: mainColor,
+                        color: AppColors.mainColor,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -101,14 +101,14 @@ class _LoginScreenState extends State<LoginScreen> {
                               });
                             },
                             side: const BorderSide(
-                              color: middleGray, // 테두리 색상
+                              color: AppColors.middleGray, // 테두리 색상
                               width: 2, // 테두리 두께
                             ),
-                            activeColor: mainColor,
+                            activeColor: AppColors.mainColor,
                           ),
                           const Text(
                             'Remember me',
-                            style: TextStyle(color: middleGray),
+                            style: TextStyle(color: AppColors.middleGray),
                           ),
                         ],
                       ),
@@ -116,7 +116,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           child: const Text(
                             'Forgot Password?',
                             style: TextStyle(
-                                fontFamily: 'DMSans', color: mainColor),
+                                fontFamily: 'DMSans', color: AppColors.mainColor),
                           ),
                           onPressed: () {
                             Navigator.push(

@@ -54,7 +54,7 @@ class Signature extends ConsumerWidget {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             color: Colors.white,
-                            border: Border.all(color: middleGray),
+                            border: Border.all(color: AppColors.middleGray),
                           ),
                           child: SfSignaturePad(
                             key: signaturePadKey,
@@ -82,12 +82,12 @@ class Signature extends ConsumerWidget {
                                               BorderRadius.circular(10),
                                           color: Colors.white,
                                           border:
-                                              Border.all(color: middleGray)),
+                                              Border.all(color: AppColors.middleGray)),
                                       child: Center(
                                         child: Text(
                                           'Retry',
                                           style: CustomStyle.headMedium(
-                                              color: middleGray),
+                                              color: AppColors.middleGray),
                                         ),
                                       ),
                                     )),
@@ -107,7 +107,7 @@ class Signature extends ConsumerWidget {
                                       decoration: BoxDecoration(
                                           borderRadius:
                                               BorderRadius.circular(10),
-                                          color: purple,
+                                          color: AppColors.purple,
                                           border: Border.all(
                                               color: Colors.transparent)),
                                       child: Center(
@@ -135,7 +135,7 @@ class Signature extends ConsumerWidget {
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(10),
-                        border: Border.all(color: middleGray),
+                        border: Border.all(color: AppColors.middleGray),
                       ),
                       child: FittedBox(
                         fit: BoxFit.contain,

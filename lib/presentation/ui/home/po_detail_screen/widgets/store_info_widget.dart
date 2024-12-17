@@ -32,7 +32,7 @@ class PoInfoWidget extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(10),
                 decoration: ShapeDecoration(
-                  color: mainColor,
+                  color: AppColors.mainColor,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(6)),
                 ),
@@ -66,7 +66,7 @@ class PoInfoWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(PoInfo.poName,
-                      style: CustomStyle.headMedium(color: mainColor)),
+                      style: CustomStyle.headMedium(color: AppColors.mainColor)),
                   const SizedBox(height: 8),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,

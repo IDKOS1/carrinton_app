@@ -34,13 +34,13 @@ class JerryCan extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        border: Border.all(color: orange),
+        border: Border.all(color: AppColors.orange),
         color: Colors.transparent,
       ),
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
       child: Text(
         canNumber,
-        style: CustomStyle.headMedium(color: orange),
+        style: CustomStyle.headMedium(color: AppColors.orange),
         textAlign: TextAlign.center,
       ),
     );
