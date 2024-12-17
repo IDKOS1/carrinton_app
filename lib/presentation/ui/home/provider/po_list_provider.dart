@@ -9,5 +9,5 @@ final poListViewModelProvider =
 StateNotifierProvider<PoListViewModel, AsyncValue<PoListEntity?>>((ref) {
   final useCase = getIt<PoListUseCase>();
 
-  return PoListViewModel(PoListUseCase: useCase);
+  return PoListViewModel(poListUseCase: useCase);
 });
