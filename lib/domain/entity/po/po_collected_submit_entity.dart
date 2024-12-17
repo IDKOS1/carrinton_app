@@ -5,8 +5,8 @@ part 'po_collected_submit_entity.freezed.dart';
 
 // TODO 추가 프로퍼티 및 이미지 처리 로직 필요
 @freezed
-class POCollectedSubmitEntity with _$POCollectedSubmitEntity {
-  const factory POCollectedSubmitEntity({
+class PoCollectedSubmitEntity with _$PoCollectedSubmitEntity {
+  const factory PoCollectedSubmitEntity({
     required int PoId,
     required bool isCollected,
     String? mainImage,
@@ -14,5 +14,5 @@ class POCollectedSubmitEntity with _$POCollectedSubmitEntity {
     int? amount,
     List<String>? newJerryCan,
 
-  }) = _POCollectedSubmitEntity;
+  }) = _PoCollectedSubmitEntity;
 }

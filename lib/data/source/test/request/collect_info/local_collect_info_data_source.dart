@@ -3,14 +3,10 @@ import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'package:logger/logger.dart';
 
-abstract class CollectInfoRequest {
-  Future<Map<String, dynamic>> getCollectInfo();
-}
-
-class LocalCollectInfoDataSource implements CollectInfoRequest {
+class CollectInfoRequest {
   final AssetBundle assetBundle;
 
-  LocalCollectInfoDataSource({required this.assetBundle});
+  CollectInfoRequest({required this.assetBundle});
   var logger = Logger();
 
   @override

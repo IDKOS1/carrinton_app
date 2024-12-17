@@ -6,10 +6,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 class PoInformation extends StatelessWidget {
   // final PoInfo PoInfo;
   final VoidCallback onPressed;
-  final PoEntity PoInfo;
+  final PoEntity poInfo;
 
   const PoInformation(
-      {super.key, required this.PoInfo, required this.onPressed});
+      {super.key, required this.poInfo, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class PoInformation extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Image.asset(
-                PoInfo.PoImage,
+                poInfo.poImage,
                 width: 100,
                 height: 100,
               ),
@@ -36,7 +36,7 @@ class PoInformation extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      PoInfo.title,
+                      poInfo.title,
                       style: const TextStyle(
                         color: mainColor,
                         fontSize: 16,
@@ -59,7 +59,7 @@ class PoInformation extends StatelessWidget {
                         const SizedBox(width: 4),
                         Expanded(
                           child: Text(
-                            PoInfo.location,
+                            poInfo.location,
                             style: const TextStyle(
                               color: Colors.black,
                               fontSize: 12,
@@ -84,7 +84,7 @@ class PoInformation extends StatelessWidget {
                         ),
                         Expanded(
                           child: Text(
-                            PoInfo.number,
+                            poInfo.number,
                             style: const TextStyle(
                               color: Colors.black,
                               fontSize: 12,
@@ -104,7 +104,7 @@ class PoInformation extends StatelessWidget {
                         crossAxisAlignment: WrapCrossAlignment.center,
                         children: [
                           Text(
-                            PoInfo.operatingTime,
+                            poInfo.operatingTime,
                             style: const TextStyle(
                               color: Color(0xFF232C3A),
                               fontSize: 16,
@@ -112,7 +112,7 @@ class PoInformation extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            '${PoInfo.distance} km',
+                            '${poInfo.distance} km',
                             style: const TextStyle(
                               color: Color(0xFFA9A5B8),
                               fontSize: 14,

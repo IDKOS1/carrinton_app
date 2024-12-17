@@ -5,20 +5,20 @@ part 'po_list_entity.freezed.dart';
 @freezed
 class PoListEntity with _$PoListEntity {
   const factory PoListEntity({
-    required List<PoEntity> PoList,
+    required List<PoEntity> poList,
   }) = _PoListEntity;
 }
 
 @freezed
 class PoEntity with _$PoEntity {
   const factory PoEntity({
-    required int PoId,
+    required int poId,
     required String title,
     required String location,
     required String number,
     required String operatingTime,
     required double distance,
-    required String PoImage,
+    required String poImage,
     required int price,
   }) = _PoEntity;
 }

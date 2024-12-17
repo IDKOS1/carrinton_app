@@ -29,7 +29,7 @@ class BaseScreen extends ConsumerWidget {
                 color: Colors.red,
               ))
             : Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
+                padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
                 child: Column(
                   children: [
                     const TopProfile(),
