@@ -1,4 +1,5 @@
-import 'package:carrinton_app/data/models/collect_info_model.dart';
+import 'package:carrinton_app/data/dto/collect_info/collect_info_mapper.dart';
+import 'package:carrinton_app/data/models/collect_info/collect_info_model.dart';
 import 'package:carrinton_app/data/source/test/request/collect_info/local_collect_info_data_source.dart';
 import 'package:carrinton_app/domain/entity/collect_info/collect_info_entity.dart';
 import 'package:carrinton_app/domain/repository/collect_info/collect_info_repository.dart';
@@ -19,7 +20,7 @@ class CollectInfoRepositoryImpl implements CollectInfoRepository {
     try {
       final dataMap = await localDataSource.getCollectInfo();
       final model = CollectInfoModel.fromJson(dataMap);
-      return Success(model.toEntity());
+      return Success(CollectInfoMapper.toEntity(model));
     } on FormatException catch (e) {
       logger.d('Format 에러');
       return Error(DataSourceFailure('Data format error: $e'));
