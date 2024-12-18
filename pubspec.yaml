@@ -52,6 +52,10 @@ dependencies:
   get_it: ^8.0.2
   flutter_screenutil: ^5.9.3
   fl_country_code_picker: ^0.1.9+1
+  talker: ^4.5.2
+  talker_dio_logger: ^4.5.2
+  talker_riverpod_logger: ^4.5.2
+  talker_flutter: ^4.5.2
 
 dev_dependencies:
   flutter_test:
