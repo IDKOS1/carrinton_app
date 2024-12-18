@@ -42,7 +42,7 @@ class _WarehouseScreenState extends State<WarehouseScreen> {
                           ),
                           Text(
                             'Warehouse',
-                            style: CustomStyle.bodySmall(color: AppColors.mainColor),
+                            style: CustomStyle.bodyMedium(color: AppColors.mainColor),
                           ),
                           Row(
                             crossAxisAlignment:
