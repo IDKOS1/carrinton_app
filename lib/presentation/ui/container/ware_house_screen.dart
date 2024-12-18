@@ -1,7 +1,7 @@
 import 'package:carrinton_app/presentation/theme/colors.dart';
 import 'package:carrinton_app/presentation/theme/text_style.dart';
 import 'package:carrinton_app/presentation/ui/home/Po_detail_screen/widgets/signature.dart';
-import 'package:carrinton_app/presentation/ui/login/widget.dart';
+import 'package:carrinton_app/presentation/ui/login/widgets/large_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
