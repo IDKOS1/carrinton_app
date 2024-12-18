@@ -51,6 +51,7 @@ dependencies:
   logger: ^2.5.0
   get_it: ^8.0.2
   flutter_screenutil: ^5.9.3
+  fl_country_code_picker: ^0.1.9+1
 
 dev_dependencies:
   flutter_test:
