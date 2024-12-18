@@ -148,7 +148,7 @@ class Signature extends ConsumerWidget {
               child: Text(
                 description,
                 textAlign: TextAlign.end,
-                style: CustomStyle.bodySmall(),
+                style: CustomStyle.bodyMedium(),
                 softWrap: true,
                 overflow: TextOverflow.visible, // 텍스트가 넘칠 경우 처리 방식
               ),

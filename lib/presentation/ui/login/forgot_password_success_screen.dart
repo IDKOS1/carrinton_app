@@ -1,5 +1,6 @@
 import 'package:carrinton_app/presentation/theme/colors.dart';
-import 'package:carrinton_app/presentation/ui/login/widget.dart';
+import 'package:carrinton_app/presentation/theme/text_style.dart';
+import 'package:carrinton_app/presentation/ui/login/widgets/large_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -17,26 +18,17 @@ class ForgotPasswordSuccess extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              const Text(
+              Text(
                 'Successfully',
-                style: TextStyle(
-                    color: AppColors.navy,
-                    fontSize: 30,
-                    fontFamily: 'DMSans',
-                    fontWeight: FontWeight.w700),
+                style: CustomStyle.headTitle(color: AppColors.navy),
               ),
               const SizedBox(
                 height: 14,
               ),
-              const Text(
+              Text(
                 'We have sent you a password reset SMS. Please follow\n'
                 'the instructions in the email to reset your password.',
-                style: TextStyle(
-                  color: AppColors.navy,
-                  fontSize: 12,
-                  fontWeight: FontWeight.w400,
-                  fontFamily: 'DMSans',
-                ),
+                style: CustomStyle.bodySmall(color: AppColors.navy),
                 textAlign: TextAlign.center,
               ),
               Center(

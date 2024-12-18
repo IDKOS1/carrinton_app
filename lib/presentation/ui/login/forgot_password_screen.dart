@@ -1,5 +1,7 @@
 import 'package:carrinton_app/presentation/theme/colors.dart';
-import 'package:carrinton_app/presentation/ui/login/widget.dart';
+import 'package:carrinton_app/presentation/theme/text_style.dart';
+import 'package:carrinton_app/presentation/ui/login/widgets/large_button.dart';
+import 'package:carrinton_app/presentation/ui/login/widgets/login_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -24,25 +26,14 @@ class ForgotPassword extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    const Text(
+                    Text(
                       'Forgot Password?',
-                      style: TextStyle(
-                          color: AppColors.navy,
-                          fontSize: 30,
-                          fontFamily: 'DMSans',
-                          fontWeight: FontWeight.w700),
+                      style: CustomStyle.headTitle(color: AppColors.navy),
                     ),
-                    const SizedBox(
-                      height: 14,
-                    ),
-                    const Text(
+                    const SizedBox(height: 14),
+                    Text(
                       'To reset your password, you need your email\nthat can be authenticated',
-                      style: TextStyle(
-                        color: AppColors.navy,
-                        fontSize: 12,
-                        fontWeight: FontWeight.w400,
-                        fontFamily: 'DMSans',
-                      ),
+                      style: CustomStyle.bodySmall(color: AppColors.navy),
                       textAlign: TextAlign.center,
                     ),
                     Center(
@@ -55,21 +46,10 @@ class ForgotPassword extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const Align(
-                      alignment: AlignmentDirectional.topStart,
-                      child: Text(
-                        'Phone',
-                        style: TextStyle(
-                          fontFamily: 'DMSans',
-                          color: AppColors.mainColor,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ),
                     const SizedBox(
                       height: 18,
                     ),
-                    const CustomTextField(isPassword: false),
+                    const LoginField(isPassword: false, title: 'Phone',),
                     const SizedBox(height: 30),
                     LargeButton(
                         buttonText: 'RESET PASSWORD',

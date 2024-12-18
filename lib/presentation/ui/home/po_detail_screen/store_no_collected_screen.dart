@@ -17,7 +17,7 @@ class PoNoCollectedScreen extends ConsumerWidget {
         Text(
           'Please select the reason for not collection.',
           textAlign: TextAlign.start,
-          style: CustomStyle.bodyMedium(),
+          style: CustomStyle.bodyLarge(),
         ),
         const SizedBox(height: 8),
         Container(

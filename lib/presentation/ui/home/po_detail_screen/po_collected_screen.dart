@@ -81,7 +81,7 @@ class _PoCollectedScreenState extends ConsumerState<PoCollectedScreen> {
             ),
             const SizedBox(height: 20),
             Text('New Jerry can number at the shop',
-                style: CustomStyle.bodyMedium()),
+                style: CustomStyle.bodyLarge()),
             Container(
               width: double.infinity,
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),

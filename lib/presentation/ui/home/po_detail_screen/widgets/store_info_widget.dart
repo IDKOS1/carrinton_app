@@ -80,7 +80,7 @@ class PoInfoWidget extends StatelessWidget {
                       ),
                       Expanded(
                         child: Text(PoInfo.address,
-                            style: CustomStyle.bodySmall()),
+                            style: CustomStyle.bodyMedium()),
                       ),
                     ],
                   ),
@@ -96,7 +96,7 @@ class PoInfoWidget extends StatelessWidget {
                       Expanded(
                         child: Text(
                           PoInfo.number,
-                          style: CustomStyle.bodySmall(),
+                          style: CustomStyle.bodyMedium(),
                           softWrap: true, // 자동 줄바꿈 허용
                           overflow: TextOverflow.visible,
                         ),
@@ -109,7 +109,7 @@ class PoInfoWidget extends StatelessWidget {
                   Text(
                     'Price : ${PoInfo.price}MYR',
                     textAlign: TextAlign.center,
-                    style: CustomStyle.bodySmall(),
+                    style: CustomStyle.bodyMedium(),
                   ),
                   const SizedBox(height: 8),
                   Container(
