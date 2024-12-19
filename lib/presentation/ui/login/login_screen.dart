@@ -43,7 +43,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     const LoginText(),
                     const LoginField(title: 'Phone', isPassword: false),
-                    const SizedBox(height: 18),
+                    SizedBox(height: 18.h),
                     const LoginField(title: 'PIN', isPassword: true),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -68,18 +68,17 @@ class _LoginScreenState extends State<LoginScreen> {
                               ),
                               activeColor: AppColors.mainColor,
                             ),
-                            const Text(
+                            Text(
                               'Remember me',
-                              style: TextStyle(color: AppColors.middleGray),
+                              style: CustomStyle.bodyMedium(
+                                  color: AppColors.middleGray),
                             ),
                           ],
                         ),
                         TextButton(
-                            child: const Text(
+                            child: Text(
                               'Forgot Password?',
-                              style: TextStyle(
-                                  fontFamily: 'DMSans',
-                                  color: AppColors.mainColor),
+                              style: CustomStyle.bodyMedium(),
                             ),
                             onPressed: () {
                               Navigator.push(
@@ -90,9 +89,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             })
                       ],
                     ),
-                    const SizedBox(
-                      height: 30,
-                    ),
+                    SizedBox(height: 30.h),
                     LargeButton(
                       buttonText: 'Login',
                       onPressed: () {
