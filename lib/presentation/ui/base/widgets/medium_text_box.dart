@@ -16,8 +16,8 @@ class MediumTextBox extends StatelessWidget {
       {super.key,
         required this.title,
         this.backgroundColor = Colors.white,
-        this.textColor = middleGray,
-        this.borderColor = middleGray,
+        this.textColor = AppColors.middleGray,
+        this.borderColor = AppColors.middleGray,
         this.padding = const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
         this.flex = 0,
         this.onTap
@@ -33,7 +33,7 @@ class MediumTextBox extends StatelessWidget {
           padding: padding,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            border: Border.all(color: borderColor ?? middleGray),
+            border: Border.all(color: borderColor ?? AppColors.middleGray),
             color: backgroundColor ?? Colors.transparent,
           ),
           alignment: Alignment.center,

@@ -53,7 +53,7 @@ class HomeScreen extends ConsumerWidget {
           child: poListInfo == null
               ? const Center(
                 child: CircularProgressIndicator(
-                    color: mainColor,
+                    color: AppColors.mainColor,
                   ),
               )
               : ListView.builder(

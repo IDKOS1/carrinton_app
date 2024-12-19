@@ -97,3 +97,11 @@ lib/generated_plugin_registrant.dart
 *.freezed.dart
 *.g.dart
 /android/.kotlin/errors/errors-1733912559084.log
+/.idea/inspectionProfiles/Project_Default.xml
+/ios/Podfile.lock
+/ios/Runner.xcworkspace/project.pbxproj
+/linux/flutter/generated_plugin_registrant.cc
+/linux/flutter/generated_plugins.cmake
+/windows/flutter/generated_plugin_registrant.cc
+/windows/flutter/generated_plugins.cmake
+/macos/Flutter/GeneratedPluginRegistrant.swift

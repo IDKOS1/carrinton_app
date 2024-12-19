@@ -79,7 +79,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
                     height: isSelected ? 35 : 30,
                     child: SvgPicture.asset(
                       'assets/icons/icon_${pages[index].name.toLowerCase()}.svg',
-                      color: isSelected ? mainColor : Colors.grey,
+                      color: isSelected ? AppColors.mainColor : Colors.grey,
                     ),
                   ),
                 ),

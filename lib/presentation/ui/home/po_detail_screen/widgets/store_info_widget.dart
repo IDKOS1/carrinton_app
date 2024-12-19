@@ -32,7 +32,7 @@ class PoInfoWidget extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(10),
                 decoration: ShapeDecoration(
-                  color: mainColor,
+                  color: AppColors.mainColor,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(6)),
                 ),
@@ -66,7 +66,7 @@ class PoInfoWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(PoInfo.poName,
-                      style: CustomStyle.headMedium(color: mainColor)),
+                      style: CustomStyle.headMedium(color: AppColors.mainColor)),
                   const SizedBox(height: 8),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -80,7 +80,7 @@ class PoInfoWidget extends StatelessWidget {
                       ),
                       Expanded(
                         child: Text(PoInfo.address,
-                            style: CustomStyle.bodySmall()),
+                            style: CustomStyle.bodyMedium()),
                       ),
                     ],
                   ),
@@ -96,7 +96,7 @@ class PoInfoWidget extends StatelessWidget {
                       Expanded(
                         child: Text(
                           PoInfo.number,
-                          style: CustomStyle.bodySmall(),
+                          style: CustomStyle.bodyMedium(),
                           softWrap: true, // 자동 줄바꿈 허용
                           overflow: TextOverflow.visible,
                         ),
@@ -109,7 +109,7 @@ class PoInfoWidget extends StatelessWidget {
                   Text(
                     'Price : ${PoInfo.price}MYR',
                     textAlign: TextAlign.center,
-                    style: CustomStyle.bodySmall(),
+                    style: CustomStyle.bodyMedium(),
                   ),
                   const SizedBox(height: 8),
                   Container(

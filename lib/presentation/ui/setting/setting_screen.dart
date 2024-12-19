@@ -1,4 +1,4 @@
-import 'package:carrinton_app/presentation/ui/login/widget.dart';
+import 'package:carrinton_app/presentation/ui/login/widgets/large_button.dart';
 import 'package:flutter/material.dart';
 
 class SettingScreen extends StatelessWidget {

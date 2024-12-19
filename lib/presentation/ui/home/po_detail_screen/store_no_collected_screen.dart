@@ -17,7 +17,7 @@ class PoNoCollectedScreen extends ConsumerWidget {
         Text(
           'Please select the reason for not collection.',
           textAlign: TextAlign.start,
-          style: CustomStyle.bodyMedium(),
+          style: CustomStyle.bodyLarge(),
         ),
         const SizedBox(height: 8),
         Container(
@@ -111,14 +111,14 @@ class RejectReason extends StatelessWidget {
           width: double.infinity,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            border: isSelected ? null : Border.all(color: orange),
-            color: isSelected ? orange : Colors.transparent,
+            border: isSelected ? null : Border.all(color: AppColors.orange),
+            color: isSelected ? AppColors.orange : Colors.transparent,
           ),
           child: Center(
             child: Text(
               rejectReason,
               style: CustomStyle.headMedium(
-                  color: isSelected ? Colors.white : orange),
+                  color: isSelected ? Colors.white : AppColors.orange),
               textAlign: TextAlign.center,
             ),
           ),

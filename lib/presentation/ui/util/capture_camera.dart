@@ -43,11 +43,11 @@ class CaptureCamera extends ConsumerWidget {
                   borderRadius: BorderRadius.circular(10),
                   child: image == null
                       ? Container(
-                    color: lightGray,
+                    color: AppColors.lightGray,
                     child: const Icon(
                       Icons.camera_alt_outlined,
                       size: 48,
-                      color: middleGray,
+                      color: AppColors.middleGray,
                     ),
                   )
                       : Image.file(

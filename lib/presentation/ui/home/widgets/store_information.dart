@@ -38,7 +38,7 @@ class PoInformation extends StatelessWidget {
                     Text(
                       poInfo.title,
                       style: const TextStyle(
-                        color: mainColor,
+                        color: AppColors.mainColor,
                         fontSize: 16,
                         fontFamily: 'DM Sans',
                         fontWeight: FontWeight.w700,

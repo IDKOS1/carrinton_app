@@ -36,7 +36,7 @@ class NewJerryCan extends ConsumerWidget {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        border: Border.all(color: orange),
+        border: Border.all(color: AppColors.orange),
         color: Colors.transparent,
       ),
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
@@ -45,7 +45,7 @@ class NewJerryCan extends ConsumerWidget {
         children: [
           Text(
             canNumber,
-            style: CustomStyle.headMedium(color: orange),
+            style: CustomStyle.headMedium(color: AppColors.orange),
           ),
           const SizedBox(
             width: 2,
